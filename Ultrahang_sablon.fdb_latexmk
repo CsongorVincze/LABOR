@@ -1,6 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1771983327.68644 "c:/Users/Csongor/Documents/BME/LABOR/Ultrahang_sablon.tex" "Ultrahang_sablon.pdf" "Ultrahang_sablon" 1771983328.0612 0
-  "%OUTDIR%/Ultrahang_sablon.aux" 1771983327 2250 87790ba6e702749f91ca67c6f83d6f0a "pdflatex"
+["pdflatex"] 1772574359.13483 "c:/Users/Csongor/Documents/BME/LABOR/Ultrahang_sablon.tex" "Ultrahang_sablon.pdf" "Ultrahang_sablon" 1772574359.60362 0
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmmi6.tfm" 1136765053 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -30,10 +29,11 @@
   "C:/Program Files/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1704400941 30006 57b07afb710ee2f649c65cfbafda39c1 ""
   "C:/Users/Csongor/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765325481 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Csongor/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1765325678 24215238 0cc95e8033ad0112a9cb06cac7ddfe6c ""
+  "Ultrahang_sablon.aux" 1772574359 2250 87790ba6e702749f91ca67c6f83d6f0a "pdflatex"
   "Ultrahang_sablon.tex" 1771983326 5932 138d6bc89166e7770d9fecb6ab8cd58a ""
   "c:/Users/Csongor/Documents/BME/LABOR/Ultrahang_sablon.tex" 1771983326 5932 138d6bc89166e7770d9fecb6ab8cd58a ""
   (generated)
-  "%OUTDIR%/Ultrahang_sablon.aux"
-  "%OUTDIR%/Ultrahang_sablon.log"
+  "Ultrahang_sablon.aux"
+  "Ultrahang_sablon.log"
   "Ultrahang_sablon.pdf"
   (rewritten before read)
