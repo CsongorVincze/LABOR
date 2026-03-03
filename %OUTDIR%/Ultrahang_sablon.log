@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.10)  25 FEB 2026 01:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.10)  25 FEB 2026 02:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -91,26 +91,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 19.
-
-
-LaTeX Warning: File `your_image_here.png' not found on input line 39.
-
-
-c:/Users/Csongor/Documents/BME/LABOR/Ultrahang_sablon.tex:39: Package pdftex.def Error: File `your_image_here.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.39 ...degraphics[width=4cm]{your_image_here.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[1
+ [1
 
 {C:/Users/Csongor/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
@@ -124,28 +105,31 @@ Overfull \hbox (33.89133pt too wide) in paragraph at lines 131--131
 []\OT1/cmr/bx/n/14.4 Hangsebess^^Seg meghat^^Saroz^^Sasa az ^^Satvitt jel f^^Sazis^^Sanak
  []
 
-[2] [3] [4] (c:\Users\Csongor\Documents\BME\LABOR\%OUTDIR%\Ultrahang_sablon.aux)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3] [4] (c:\Users\Csongor\Documents\BME\LABOR\%OUTDIR%\Ultrahang_sablon.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 1351 strings out of 474486
- 22688 string characters out of 5753563
- 1942542 words of memory out of 5000000
- 23672 multiletter control sequences out of 15000+600000
- 561877 words of font info for 49 fonts, out of 8000000 for 9000
+ 1318 strings out of 474486
+ 21784 string characters out of 5753563
+ 1945542 words of memory out of 5000000
+ 23640 multiletter control sequences out of 15000+600000
+ 561709 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,65p,529b,282s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\Csongor\Documents\BME\LABOR\%OUTDIR%\Ultrahang_sablon.pdf (4 pages, 81812 bytes).
+ 57i,9n,65p,529b,202s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on c:\Users\Csongor\Documents\BME\LABOR\%OUTDIR%\Ultrahang_sablon.pdf (4 pages, 69448 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
