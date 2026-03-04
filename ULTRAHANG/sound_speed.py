@@ -32,20 +32,36 @@ prec_amp_mV = np.array([659.0, 615.0 ,589.5, 542.5, 498.0, 537.0])
 # --- ÁBRÁZOLÁS ---
 plt.figure(figsize=(8, 6))
 
-# Mért adatok ábrázolása (távolság az x tengelyen, idő az y tengelyen)
+# Mért adatok ábrázolása (távolság az x tengelyen, amplitúdó az y tengelyen)
 plt.plot(distance_mm, amp_mV_1, 'o', color='#1f77b4', markersize=6, label="1. Mérés")
 plt.plot(distance_mm, amp_mV_2, 's', color='#ff7f0e', markersize=6, label="2. Mérés", alpha=0.8)
 plt.plot(distance_mm, amp_mV_3, '^', color='#2ca02c', markersize=6, label="3. Mérés", alpha=0.8)
 
-plt.title('Hangsebesség meghatározása\n(Távolság - Idő grafikon)')
+plt.title('Amplitúdó - Távolság grafikon')
 plt.xlabel(r'Távolság, $s$ [mm]')
-plt.ylabel(r'Időkülönbség, $\Delta t$ [$\mu$s]')
+plt.ylabel(r'Amplitúdó, $U$ [mV]')
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.legend()
 plt.tight_layout()
 
 # Kép mentése
-plt.savefig('hangsebesseg_meres.pdf')
-print("A grafikon sikeresen lementve 'hangsebesseg_meres.pdf' néven.")
+plt.savefig('amplitudo_meres.pdf')
+print("A grafikon sikeresen lementve 'amplitudo_meres.pdf' néven.")
+
+# --- MÁSODIK ÁBRA (Precízebb mérési pontok) ---
+plt.figure(figsize=(8, 6))
+
+plt.plot(prec_dist, prec_amp_mV, 'D', color='#d62728', markersize=6, label="Precíz mérés")
+
+plt.title('Amplitúdó - Távolság grafikon (Precíz mérés)')
+plt.xlabel(r'Távolság, $s$ [mm]')
+plt.ylabel(r'Amplitúdó, $U$ [mV]')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
+
+# Kép mentése
+plt.savefig('amplitudo_preciz.pdf')
+print("A grafikon sikeresen lementve 'amplitudo_preciz.pdf' néven.")
 
 plt.show()
