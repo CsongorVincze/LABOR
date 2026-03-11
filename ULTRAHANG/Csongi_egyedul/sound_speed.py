@@ -20,8 +20,7 @@ distance_mm = np.array([0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24])
 
 # Időkülönbségek (mért adatok) [us] - 3 független mérés
 amp_mV_1 = np.array([466.5, 486.0, 476.0, 436.0, 538.5, 390.0, 529.0, 350.0, 580.0, 318.5, 588.0, 328.5, 540.5])
-amp_mV_2 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-amp_mV_3 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+
 # init dist 13.9mm
 
 prec_dist = np.array([46.90, 42.65, 38.25, 33.90, 30.40, 25.70])
@@ -34,8 +33,7 @@ plt.figure(figsize=(8, 6))
 
 # Mért adatok ábrázolása (távolság az x tengelyen, amplitúdó az y tengelyen)
 plt.plot(distance_mm, amp_mV_1, 'o', color='#1f77b4', markersize=6, label="1. Mérés")
-plt.plot(distance_mm, amp_mV_2, 's', color='#ff7f0e', markersize=6, label="2. Mérés", alpha=0.8)
-plt.plot(distance_mm, amp_mV_3, '^', color='#2ca02c', markersize=6, label="3. Mérés", alpha=0.8)
+
 
 plt.title('Amplitúdó - Távolság grafikon')
 plt.xlabel(r'Távolság, $s$ [mm]')
