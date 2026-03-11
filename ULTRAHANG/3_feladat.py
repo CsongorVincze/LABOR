@@ -23,23 +23,40 @@ distance_mm = np.array([0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24])
 # Időkülönbségek (mért adatok) [us] - 3 független mérés
 # kezdeti 0us 50mm
 time_us_1 = np.array([0, 5.6, 12.0, 17.4, 23.0, 29.2, 34.8, 40.8, 46.6, 52.2, 57.8, 63.8, 69.2])
+time_us_2 = np.array([0, 5.6, 11.8, 16.8, 22.8, 28.8, 34.4, 40.6, 45.8, 51.6, 57.8, 63.0, 69.0])
 # lehet fel mili hiba ha rosszul olvasom le a skalat
 
 # --- ÁBRÁZOLÁS ---
 plt.figure(figsize=(8, 6))
 
-# Csak akkor ábrázoljuk és illesztünk, ha a tömbök mérete azonos és nem üresek
+valid_times = []
+labels = []
+colors = ['#1f77b4', '#2ca02c', '#d62728', '#9467bd']
+markers = ['o', 's', '^', 'D']
+
 if len(distance_mm) == len(time_us_1) and len(distance_mm) > 0:
-    # Mért adatok ábrázolása (távolság az x tengelyen, idő az y tengelyen)
-    plt.plot(distance_mm, time_us_1, 'o', color='#1f77b4', markersize=6, label="1. Mérés")
+    valid_times.append(time_us_1)
+    labels.append("1. Mérés")
+
+if len(distance_mm) == len(time_us_2) and len(distance_mm) > 0:
+    valid_times.append(time_us_2)
+    labels.append("2. Mérés")
+
+if len(valid_times) > 0:
+    # Ábrázoljuk az egyes méréseket
+    for i, t_arr in enumerate(valid_times):
+        plt.plot(distance_mm, t_arr, markers[i % len(markers)], color=colors[i % len(colors)], markersize=6, alpha=0.7, label=labels[i])
+        
+    # Átlag kiszámítása pontonként
+    time_us_avg = np.mean(valid_times, axis=0)
 
     # Egyenes illesztése y = a*x + b alakban
     def linear_model(x, a, b):
         return a * x + b
     
     if len(distance_mm) > 1:
-        # Illesztés a scipy.optimize.curve_fit fv-nyel
-        popt, pcov = opt.curve_fit(linear_model, distance_mm, time_us_1)
+        # Illesztés a scipy.optimize.curve_fit fv-nyel az átlagra
+        popt, pcov = opt.curve_fit(linear_model, distance_mm, time_us_avg)
         a, b = popt
         perr = np.sqrt(np.diag(pcov)) # a paraméterek hibája
         
@@ -47,12 +64,16 @@ if len(distance_mm) == len(time_us_1) and len(distance_mm) > 0:
         d_fit = np.linspace(min(distance_mm), max(distance_mm), 100)
         t_fit = linear_model(d_fit, a, b)
         
-        # Megformázzuk a hiba feliratot (opcionális, de hasznos)
-        eq_label = f'Illesztett egyenes: $\Delta t = {a:.3f} \cdot s {b:+.3f}$'
-        plt.plot(d_fit, t_fit, '-', color='#ff7f0e', label=eq_label)
+        # Megformázzuk a hiba feliratot
+        if len(valid_times) > 1:
+            eq_label = f'Illesztett egyenes (átlagra): $\Delta t = {a:.3f} \cdot s {b:+.3f}$'
+        else:
+            eq_label = f'Illesztett egyenes: $\Delta t = {a:.3f} \cdot s {b:+.3f}$'
+            
+        plt.plot(d_fit, t_fit, '-', color='#ff7f0e', linewidth=2, label=eq_label)
         
         # Eredmény kiírása a konzolra
-        print("--- Illesztés eredményei ---")
+        print(f"--- Illesztés eredményei ({len(valid_times)} mérés{' átlagára' if len(valid_times)>1 else ''}) ---")
         print(f"Meredekség (a): {a:.4f} ± {perr[0]:.4f} us/mm")
         print(f"Y-metszet (b): {b:.4f} ± {perr[1]:.4f} us")
         if a != 0:
@@ -62,8 +83,8 @@ if len(distance_mm) == len(time_us_1) and len(distance_mm) > 0:
             print(f"Számított sebesség (1/a): {v_szamitott:.2f} m/s (± {error_perc:.2f}%)")
         print("----------------------------")
 else:
-    print("Figyelem: A 'distance_mm' és 'time_us_1' tömbök mérete nem egyezik, vagy üresek.")
-    print(f"distance_mm hossza: {len(distance_mm)}, time_us_1 hossza: {len(time_us_1)}. Kérlek töltsd ki az adatokat!")
+    print("Figyelem: A 'distance_mm' és az idő tömbök mérete nem egyezik, vagy üresek.")
+    print(f"Kérlek töltsd ki az adatokat helyesen!")
 
 
 plt.title('Hangsebesség meghatározása\n(Távolság - Idő grafikon)')
