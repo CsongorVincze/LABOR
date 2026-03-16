@@ -44,7 +44,7 @@ Végül a kurzor egyenesek segítségével is megmértük az amplitúdó és fre
 \section{Ultrahangos adó-vevő páros átviteli karakterisztikája
 a frekvencia függvényében}
 
-Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elforgattuk őket, hogy ne zavarjanak be a visszaverődő hullámok. Ezután beállítottuk az 6 V-os eltolásmentes színuszjelet. Csatlakoztattuk az koax kábelt a jelgenerátorhoz, aztán egy koaxkábeles elosztóval bekötöttük a jelet az oszcilloszkópba és az adóba is. Az oszcilloszkóp másik bemenetéhez pedig csatlakoztattuk a vevőt. Ezután beállítottuk a triggert.
+Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elforgattuk őket, hogy ne zavarjanak be a visszaverődő hullámok. Ezután beállítottuk az 6 V-os eltolásmentes színuszjelet. Csatlakoztattuk az koax kábelt a jelgenerátorhoz, aztán egy koaxkábeles elosztóval bekötöttük a jelet az oszcilloszkópba és az adóba is. Az oszcilloszkóp másik bemenetéhez pedig csatlakoztattuk a vevőt. Ezután beállítottuk a triggert. (Ezt az első mérési alkalom óta ujramértük mert nem találtuk elég pontosnak a méréseinket.)
 
 \begin{table}[h!]
     \centering
@@ -82,8 +82,8 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
     \item A legalacsonyabb frekvenciájú jel, amit ezzel a beállítással mérni lehet: 
     \item A frekvencia, amitől kezdve hallani kezdjük a jelet: 5kHz
     \item A legmagasabb frekvencia, amit még hallunk: 17,4kHz
-    \item A rezonanciafrekvenciák: 40,27 kHz (itt 179,1 mV ampilitúdót mértünk), 51,9 kHz (itt 19 mV  volt), 93,5 kHz (itt 2,6 mV volt a mért adat)
-    \item A rezonanciafrekvencia, amely a legnagyobb csúcsot adja: 40,27 kHz, itt a csúcs 179,1 mV volt
+    \item A rezonanciafrekvenciák: 40,25 kHz (itt 208,5 mV ampilitúdót mértünk), 52,1 kHz (itt 25,6 mV  volt) és 93,1 kHz
+    \item A rezonanciafrekvencia, amely a legnagyobb csúcsot adja: 40,25 kHz, itt a csúcs 208,5 mV volt
 \end{enumerate}
 
 
@@ -115,29 +115,6 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
 \end{table}
 
 
-A rezonanciafrekvencia értéke:
-
-
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        Frekvencia [kHz] & Amplitúdó [V] \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-
-         &  \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-         &  \\ \hline
-    \end{tabular}
-    \caption{Csúcstól csúcsig amplitúdó értékek}
-    \label{Vpp}
-\end{table}
 
 
 \section{3. feladat Hangsebesség meghatározása az átvitt jel fázisának mérésével}
@@ -164,28 +141,6 @@ A hullámhossz:
 
 
 
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Távolság [mm] & Amplitúdó \\ \hline
-        0 &  \\ \hline
-        2 &  \\ \hline
-        4 &  \\ \hline
-        6 &  \\ \hline
-        8 &  \\ \hline
-        10 &  \\ \hline
-        12 &  \\ \hline
-        14 &  \\ \hline
-        16 &  \\ \hline
-        18 &  \\ \hline
-        20 &  \\ \hline
-        22 &  \\ \hline
-        24 &  \\ \hline
-    \end{tabular}
-    \caption{állóhullám amplitúdófüggese a távoldágtól}
-    \label{állóhullám}
-\end{table}
 
 
 Utolagosan ujramerve a rezonanciafrekvencia 40,81kHznek adódott, 0,01kHzes mozgatással határoztam meg.
@@ -193,7 +148,7 @@ Utolagosan ujramerve a rezonanciafrekvencia 40,81kHznek adódott, 0,01kHzes mozg
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=10cm]{amplitudo_preciz.pdf}
+    \includegraphics[width=10cm]{amp_vs_poz.pdf}
     \caption{Amplitudo gerjesztes 4.feladat}
     \label{hangsebesség_grafikon}
 \end{figure}
@@ -202,6 +157,7 @@ Utolagosan ujramerve a rezonanciafrekvencia 40,81kHznek adódott, 0,01kHzes mozg
 Az otodik feladatban beallitottam a pulzusok hosszat 36,75us ra. A tavolsag az ado-vevo kozott 16,4mm.
 
 A meghajtojel lefuto eletol mertem a gerjesztes 3. pozitiv csucsaig.
+
 
 \begin{figure}[htp]
     \centering
@@ -215,33 +171,44 @@ A meghajtojel lefuto eletol mertem a gerjesztes 3. pozitiv csucsaig.
 
 A tapasztalat az, hogy mivel kozel van az ado es a vevo igy van egy korai kis gerjesztes, es utana egy nagy gerjesztes ami a tukorrol verodik vissza. Eredetileg 10,6cm tavolsagra allitottam be a tukrot az ado vevo parostol. Ugyanug a gerjesztojel lecsengo elere es a 3. valsz pulzusra allitottam be a kurzorokat.
 
-Az ido ameddig eljut a jel a vevoig 10,6mm-nel: 0,750ms
-Az ido ameddig eljut a jel a vevoig 11,1mm-nel: 0,778ms
-Az ido ameddig eljut a jel a vevoig 11,6mm-nel: 0,806ms
-Az ido ameddig eljut a jel a vevoig 12,1mm-nel: 0,832ms
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=10cm]{return_time_vs_poz.pdf}
+    \caption{Tavolsagmeres ido grafikon (time of flight 6. feladat)}
+    \label{6feladat}
+\end{figure}
+
+Ellenőrző számításként a 14.0cm hosszú távot 15.1cm hosszúnak mértük a hangból.
 
 
 \section{7.feladat}
 
-Fix tukor vevo tavolsag: 22,3cm. Ado mozgo tukor tavolsag: 16,0cm A nyak tavolsaga az adotol 8cm.
+geometriai adatok:
+vevo-fixtukor: 19.5cm
+vevo-feligtukor: 10.5cm
+ado-mozgtuk: 19.5cm
+ado-feligtukor:10cm
 
-A mozgathato tukrot hatrafele mozgattam 25mmes kezdoallapotbol.
-
+```latex
 \begin{table}[h!]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        Távolság [mm] & Amplitúdó [mV] \\ \hline
-        22 & 3,4 \\ \hline
-        18 & 3,4 \\ \hline
-        10 & 3,6 \\ \hline
-        5  & 4,5 \\ \hline
+        23.59 & 20.44 & 18.96 & 15.50 & 14.74 & 12.17 & 10.22 & 8.05 & 6.50 & 3.65 & 2.05 \\ \hline
+        93.0 & 45.0 & 102.0 & 34.0 & 104.0 & 42.0 & 106.0 & 34.0 & 103.0 & 28.0 & 115.0 \\ \hline
     \end{tabular}
-    \caption{A mozgatható tükör távolságától függő amplitúdó értékek.}
-    \label{tab:michelson}
+    \caption{A 7. feladat mérési adatai}
 \end{table}
+```
 
-Megjegyzendo hogy a jel nagyon zajos volt es gyorsan ingadozott.
 
+\section{8.feladat}
+
+14cm az adok es a vevo tavolsaga
+megkerestuk itt 668.0mv 19.4cm az orso allasa
+60fokot beallitva a maximalis amplitudot 1.90cm orsoallasnal tapasztaltuk. Ez: 764.0mV -nak adodott.
+
+120fokot beallitva a maximalis amplitudot 4.94cm orsoallasnal tapasztaltuk. 787.5mV -nak adodott.
+180 fokot beallitva a maximalis amplitudot 8.15cm orsoallasnal tapsztaltuk. 775.0mV -nak adodott.
 
 \end{document}

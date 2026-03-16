@@ -32,70 +32,57 @@ plt.figure(figsize=(8, 6))
 valid_times = []
 labels = []
 colors = ['#1f77b4', '#2ca02c', '#d62728', '#9467bd']
-markers = ['o', 's', '^', 'D']
+markers = ['o-', 's-', '^-', 'D-']
 
-if len(distance_mm) == len(time_us_1) and len(distance_mm) > 0:
-    valid_times.append(time_us_1)
+if len(distance_mm) == len(time_us_1) and len(distance_mm) > 1:
+    valid_times.append(np.diff(time_us_1))
     labels.append("1. Mérés")
 
-if len(distance_mm) == len(time_us_2) and len(distance_mm) > 0:
-    valid_times.append(time_us_2)
+if len(distance_mm) == len(time_us_2) and len(distance_mm) > 1:
+    valid_times.append(np.diff(time_us_2))
     labels.append("2. Mérés")
 
-if len(valid_times) > 0:
-    # Ábrázoljuk az egyes méréseket
-    for i, t_arr in enumerate(valid_times):
-        plt.plot(distance_mm, t_arr, markers[i % len(markers)], color=colors[i % len(colors)], markersize=6, alpha=0.7, label=labels[i])
-        
-    # Átlag kiszámítása pontonként
-    time_us_avg = np.mean(valid_times, axis=0)
+# X tengelyen az intervallumok végét (vagy elejét) is használhatjuk, itt a szakasz vége lesz:
+x_dist = distance_mm[1:]
 
-    # Egyenes illesztése y = a*x + b alakban
-    def linear_model(x, a, b):
-        return a * x + b
-    
-    if len(distance_mm) > 1:
-        # Illesztés a scipy.optimize.curve_fit fv-nyel az átlagra
-        popt, pcov = opt.curve_fit(linear_model, distance_mm, time_us_avg)
-        a, b = popt
-        perr = np.sqrt(np.diag(pcov)) # a paraméterek hibája
+if len(valid_times) > 0:
+    # Ábrázoljuk az egyes időkülönbségeket
+    for i, diff_arr in enumerate(valid_times):
+        plt.plot(x_dist, diff_arr, markers[i % len(markers)], color=colors[i % len(colors)], markersize=6, alpha=0.7, label=labels[i])
         
-        # Illesztett pontok generálása az ábrához
-        d_fit = np.linspace(min(distance_mm), max(distance_mm), 100)
-        t_fit = linear_model(d_fit, a, b)
-        
-        # Megformázzuk a hiba feliratot
-        if len(valid_times) > 1:
-            eq_label = f'Illesztett egyenes (átlagra): $\Delta t = {a:.3f} \cdot s {b:+.3f}$'
-        else:
-            eq_label = f'Illesztett egyenes: $\Delta t = {a:.3f} \cdot s {b:+.3f}$'
-            
-        plt.plot(d_fit, t_fit, '-', color='#ff7f0e', linewidth=2, label=eq_label)
-        
-        # Eredmény kiírása a konzolra
-        print(f"--- Illesztés eredményei ({len(valid_times)} mérés{' átlagára' if len(valid_times)>1 else ''}) ---")
-        print(f"Meredekség (a): {a:.4f} ± {perr[0]:.4f} us/mm")
-        print(f"Y-metszet (b): {b:.4f} ± {perr[1]:.4f} us")
-        if a != 0:
-            # Sebesség [m/s]-ban. (1 mm/us = 1000 m/s)
-            v_szamitott = (1.0 / a) * 1000
-            error_perc = (perr[0] / abs(a)) * 100
-            print(f"Számított sebesség (1/a): {v_szamitott:.2f} m/s (± {error_perc:.2f}%)")
-        print("----------------------------")
+    # Átlag kiszámítása pontonként a különbségekre
+    diff_avg = np.mean(valid_times, axis=0)
+    plt.plot(x_dist, diff_avg, '--', color='black', linewidth=2, alpha=0.6, label="Átlagos időkülönbség")
+
+    # Konzolos kiírás a számított átlagos sebességre
+    mean_of_diffs = np.mean(diff_avg)
+    std_of_diffs = np.std(diff_avg)
+    print("--- Eredmények az időkülönbségekből ---")
+    print(f"Átlagos időkülönbség 2 mm megtételére: {mean_of_diffs:.4f} ± {std_of_diffs:.4f} us")
+    if mean_of_diffs != 0:
+        # Sebesség = út / idő = 2 mm / mean_of_diffs us = (2 / mean) * 1000 [m/s]
+        v_szamitott = (2.0 / mean_of_diffs) * 1000
+        print(f"Számított átlagos sebesség: {v_szamitott:.2f} m/s")
+    print("---------------------------------------")
+
 else:
-    print("Figyelem: A 'distance_mm' és az idő tömbök mérete nem egyezik, vagy üresek.")
+    print("Figyelem: A 'distance_mm' és az idő tömbök mérete nem egyezik, vagy nincsenek adatok megadva.")
     print(f"Kérlek töltsd ki az adatokat helyesen!")
 
 
-plt.title('Hangsebesség meghatározása\n(Távolság - Idő grafikon)')
-plt.xlabel(r'Távolság, $s$ [mm]')
-plt.ylabel(r'Időkülönbség, $\Delta t$ [$\mu$s]')
+plt.title('Hangsebesség meghatározása\n(Szomszédos mérési pontok időkülönbségei)')
+plt.xlabel(r'Távolság (szakasz vége), $s$ [mm]')
+plt.ylabel(r'Időkülönbség, $\Delta t_i - \Delta t_{i-1}$ [$\mu$s]')
 plt.grid(True, linestyle='--', alpha=0.7)
+
+# Y tengely beállítása úgy, hogy 0-tól induljon, ha akarjuk (de így jobban látszik a szórás)
+plt.ylim(0, np.max(valid_times)*1.2 if len(valid_times)>0 else 10)
+
 plt.legend()
 plt.tight_layout()
 
 # Kép mentése
-plt.savefig('hangsebesseg_meres.pdf')
-print("A grafikon sikeresen lementve 'hangsebesseg_meres.pdf' néven.")
+plt.savefig('hangsebesseg_meres_diff.pdf')
+print("A grafikon sikeresen lementve 'hangsebesseg_meres_diff.pdf' néven.")
 
 plt.show()
