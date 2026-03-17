@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{caption} % Required for \captionof
+\usepackage{amsmath}
+\usepackage{float}
 
 \title{Ultrahangos mérés}
 \author{Kern Luca, Csongor Vincze}
@@ -12,34 +14,34 @@
 
 \section*{Kivonat}
 
-Ezen laboratóriumi alkalmon ultranggal, és ultrahnagos berendezésekkel végeztünk méréseket. Ultrahangos jelátalakítókkall mértünk távolságot, a hangsebességet több féle módszerrel, illetve álló hanghullámok rezonanciafrekvenciáját kerestük meg.
+Ezen laboratóriumi alkalmon ultrahanggal és ultrahangos berendezésekkel végeztünk méréseket. Ultrahangos jelátalakítókkal mértünk távolságot, a hangsebességet többféle módszerrel, illetve álló hanghullámok rezonanciafrekvenciáját kerestük meg.
 
-\section*{1. Feladat Ismerkedés az oszcilloszkóp és a függvénygenerátor használatával.}
+\section*{1. feladat Ismerkedés az oszcilloszkóp és a függvénygenerátor használatával.}
 
-Beállítottuk a 4 V amplitúdójú, 1 V eltolású 115 Hz-es szinuszjelet. Csatlakoztattuk a jelet az oszcilloszkóphoz is. Beállítottuk a triggert, és stabilizáltuk, ízlésesen a képernyő közepér hoztuk a jelet.
+Beállítottuk a 4 V amplitúdójú, 1 V eltolású 115 Hz-es szinuszjelet. Csatlakoztattuk a jelet az oszcilloszkóphoz is. Beállítottuk a triggert, és stabilizáltuk, ízlésesen a képernyő közepére hoztuk a jelet.
 Végül közelítőleg lemértük a jel amplitúdóját és frekvenciáját.
 
-\begin{table}[h!]
+\begin{table}[H]
     \centering
     \begin{tabular}{|l|c|c|c|}
         \hline
         Paraméter & Beállított érték & kurzorral mért érték & funkcióval mért érték \\ \hline
-        Amplitúdó 4,0 ?? & 4,0 & 4,0 \\ \hline
-        Frekvencia 115,0 & 116,3 & 114,9 \\ \hline
+        Amplitúdó 4,0 V & 4,0 & 4,0 \\ \hline
+        Frekvencia 115,0 Hz & 116,3 & 114,9 \\ \hline
     \end{tabular}
     \caption{A beállított és a mért amplitúdó és frekvencia értékek.}
     \label{tab:amplitudo_frekvencia}
 \end{table}
 
-A különbség az RMS és a csúcstól csúcsig mért értékek között a fő különbség, hogy a csúcstól csúcsig mért érték az amplitúdó kétszerese, míg az effektív érték a jel négyzetének a kiátlagolásának a gyöke.
+A fő különbség az RMS és a csúcstól csúcsig mért értékek között az, hogy a csúcstól csúcsig mért érték az amplitúdó kétszerese, míg az effektív érték a jel négyzetének a kiátlagolásából vont gyök.
 
 Megváltoztattuk a csatolási módot DC-ről AC-re, így kiküszöböltük a konstans tagú feszültség miatti eltolást.
-Ha a csatolást "Ground"-ra állítottuk a következő történt:
+Ha a csatolást "Ground"-ra állítottuk a következő történt: (A jel nullára ugrott egy vonal formájában).
 
 Végül a kurzor egyenesek segítségével is megmértük az amplitúdó és frekvencia értékeit a jelnek.
 
 
-\begin{figure}[htp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=4cm]{1.42.jpg}
     \caption*{1. feladat: Az oszcilloszkóp különböző funkcióinak kipróbálása}
@@ -49,9 +51,9 @@ Végül a kurzor egyenesek segítségével is megmértük az amplitúdó és fre
 \section*{2. feladat Ultrahangos adó-vevő páros átviteli karakterisztikája
 a frekvencia függvényében}
 
-Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elforgattuk őket, hogy ne zavarjanak be a visszaverődő hullámok. Ezután beállítottuk az 5.9 V-os (Vpp) eltolásmentes színuszjelet. Csatlakoztattuk az koax kábelt a jelgenerátorhoz, aztán egy koaxkábeles elosztóval bekötöttük a jelet az oszcilloszkópba és az adóba is. Az oszcilloszkóp másik bemenetéhez pedig csatlakoztattuk a vevőt. Ezután beállítottuk a triggert. (Ezt az első mérési alkalom óta ujramértük mert nem találtuk elég pontosnak a méréseinket.) A meresunket sok adatponttal vegeztuk kulonosen a rezonanciafrekvencia kozeleben, es ott az eredmenyek osszhangban vannak a varakozasainkkal. termeszetesen mas edo-vevo parost hasznalva az eredmenyeing kisse elterhetnek mivel a rezonanciafrekvencia az anyagi parameterektol fugg. A tobbszoros visszaverodesek is pontatlanabba tehettek a meresunket, habar ezeket probaltuk eliminalni amennyire tudtuk.
+Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elforgattuk őket, hogy ne zavarjanak be a visszaverődő hullámok. Ezután beállítottuk az 5,9 V-os (Vpp) eltolásmentes szinuszjelet. Csatlakoztattuk a koax kábelt a jelgenerátorhoz, aztán egy koaxkábeles elosztóval bekötöttük a jelet az oszcilloszkópba és az adóba is. Az oszcilloszkóp másik bemenetéhez pedig csatlakoztattuk a vevőt. Ezután beállítottuk a triggert. (Ezt az első mérési alkalom óta újramértük, mert nem találtuk elég pontosnak a méréseinket.) A mérésünket sok adatponttal végeztük, különösen a rezonanciafrekvencia közelében, és ott az eredmények összhangban vannak a várakozásainkkal. Természetesen más adó-vevő párost használva az eredményeink kissé eltérhetnek, mivel a rezonanciafrekvencia az anyagi paraméterektől is függ. A többszörös visszaverődések is pontatlanabbá tehették a mérésünket, habár ezeket próbáltuk eliminálni, amennyire csak tudtuk.
 
-\begin{table}[h!]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
         \hline
@@ -82,7 +84,7 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
     \label{tab:atviteli_karakterisztika}
 \end{table}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{2_feladat_diagram1.pdf}
     \caption*{2. feladat: Az adó-vevő páros átviteli karakterisztikája (Széles sáv)}
@@ -92,14 +94,14 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
 
 \begin{enumerate}
     \item A legalacsonyabb frekvenciájú jel, amit ezzel a beállítással mérni lehet: 
-    \item A frekvencia, amitől kezdve hallani kezdjük a jelet: 5kHz
-    \item A legmagasabb frekvencia, amit még hallunk: 17,4kHz
-    \item A rezonanciafrekvenciák: 40,25 kHz (itt 208,5 mV ampilitúdót mértünk), 52,1 kHz (itt 25,6 mV  volt) és 93,1 kHz
+    \item A frekvencia, amitől kezdve hallani kezdjük a jelet: 5 kHz
+    \item A legmagasabb frekvencia, amit még hallunk: 17,4 kHz
+    \item A rezonanciafrekvenciák: 40,25 kHz (itt 208,5 mV amplitúdót mértünk), 52,1 kHz (itt 25,6 mV volt) és 93,1 kHz
     \item A rezonanciafrekvencia, amely a legnagyobb csúcsot adja: 40,25 kHz, itt a csúcs 208,5 mV volt
 \end{enumerate}
 
 
-\begin{table}[h!]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
         \hline
@@ -123,10 +125,10 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
         41,0 & 67.5 \\ \hline
     \end{tabular}
     \caption{Rezonanciafrekvencia körüli adatpontok.}
-    \label{rezonancia freki}
+    \label{tab:rezonancia_freki}
 \end{table}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{2_feladat_diagram2.pdf}
     \caption*{2. feladat: Rezonanciafrekvencia környezete (diagram)}
@@ -138,46 +140,40 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
 
 \section*{3. feladat Hangsebesség meghatározása az átvitt jel fázisának mérésével}
 
-A beállítások ugyanazok voltak, mint az előző feladatban, azzal a különbséggel, hogy most a jel frekvenciáját a mért rezonanciafrekvenciára állítottuk (ami 40,25 KHz volt). Ezt a feladat során nem állítottuk át. Csatolásnak AC-t állítottunk be. Amit a mérés során változtattunk, az a két ultrahangos jelátalakító távolsága volt. Ezt egy mikrométer orsós transzlációs mozgató segítségével tettük meg, amellyel változtattuk a távolságot, és 2mm-ként leolvastuk a jel nullátmenetének eltolódását.
-Beállítottuk a frekcenciát 40.25kHz-re, mivel ezt mértük mint rezonanciafrekvencia. Kétszer mértünk és a következő adatokat kaptuk.:
-%\begin{table}
-%    \caption{A hangsebesség mérése a távolság függvényében.}
-%    \label{tab:hangsebesseg_meres}
-%\end{table}
+A beállítások ugyanazok voltak, mint az előző feladatban, azzal a különbséggel, hogy most a jel frekvenciáját a mért rezonanciafrekvenciára állítottuk (ami 40,25 kHz volt). Ezt a feladat során nem állítottuk át. Csatolásnak AC-t állítottunk be. Amit a mérés során változtattunk, az a két ultrahangos jelátalakító távolsága volt. Ezt egy mikrométer orsós transzlációs mozgató segítségével tettük meg, amellyel változtattuk a távolságot, és 2 mm-ként leolvastuk a jel nullátmenetének eltolódását.
+Beállítottuk a frekvenciát 40,25 kHz-re, mivel ezt mértük mint rezonanciafrekvencia. Kétszer mértünk és a következő adatokat kaptuk:
 
 
-
-\begin{figure}[htp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{hangsebesseg_meres.pdf}
     \caption*{3. feladat: A hangsebesség meghatározása (távolság-idő grafikon)}
     \label{hangsebesség_grafikon}
 \end{figure}
 
-A pontokra egyenest illesztettünk. Az egyenes meredekségéből reciprokot véve a hangsebesség 346,7m/s nak adódott. Ebből a hullámhossz kozelitoleg 8,6 mm-nek adódik.
+A pontokra egyenest illesztettünk. Az egyenes meredekségéből reciprokot véve a hangsebesség 346,7 m/s-nak adódott. Ebből a hullámhossz közelítőleg 8,6 mm-nek adódik.
 
-A hibák egyik forrása a mikrométerorsó pontatlan leolvasása adhatja illetve az, hogy az időeltolódásmleolvasása is bizonytalan pontosságú, bar ezeket meg viszonylag kis hibaval tudtuk leolvasni. Az orsó leolvasásának a hibája 0,1 mm.
-Ami meg jelentosebben hozzajarulhat a pontatlansaghoz, es az egesz meres alatt jelenlevo hibaforras volt, a visszaverodo hullamok interferenciaja. Az egyenesillesztes beepitett hiba funkiojaval a kovetkezo ertekeket kaptuk: Meredekseg (m): 2.8843 ± 0.0076 us/mm
-Tengelymetszet (b): 0.0187 ± 0.1075 us Ebbol szamolhato a hangsebesseg hibaja. Ami 0.91m/s tehat kozelitoleg 1.
+A hibák egyik forrását a mikrométerorsó pontatlan leolvasása adhatja, illetve az, hogy az időeltolódás leolvasása is bizonytalan pontosságú, bár ezeket viszonylag kis hibával tudtuk leolvasni. Az orsó leolvasásának a hibája 0,1 mm.
+Ami még jelentősebben hozzájárulhat a pontatlansághoz, és az egész mérés alatt jelenlévő hibaforrás volt, a visszaverődő hullámok interferenciája. Az egyenesillesztés beépített hibafunkciójával a következő értékeket kaptuk: Meredekség ($m$): $2{,}8843 \pm 0{,}0076\ \mu\text{s/mm}$, Tengelymetszet ($b$): $0{,}0187 \pm 0{,}1075\ \mu\text{s}$. Ebből számolható a hangsebesség hibája, ami $0{,}91$ m/s, tehát közelítőleg $1$ m/s.
 
 
 \section*{4. feladat Állóhullám mintázat}
 
 A frekvenciát 40,25 kHz-re állítva beállítottuk az adót és a vevőt egymással szembe, kb. 10 cm távolságra. Ezután a mikrométeres orsót elkezdtük tekerni addig, amíg maximális erősítést nem tapasztaltunk. Itt leolvastuk az amplitúdót is, és grafikonon ábrázoltuk.
-Ezután egy másik grafikonon is ábrázoltuk a maximális erősítések helyeit az erősítés sorszámának függvényében, és egyenest illesztettünk a kapott adatokra. Mivel tudjuk, hogy két egymás után következő gerjesztés $\lambda / 2$ távolságra van egymástól, így a meredekség pontosan ezt adja meg. Ezt 2-vel beszorozva megkapjuk a hullámhosszt: $\lambda = 8,786$ mm. Mivel a frekvenciát nem változtattuk, így ebből a hangsebesség $353,7$ m/s-nak adódott.
+Ezután egy másik grafikonon is ábrázoltuk a maximális erősítések helyeit az erősítés sorszámának függvényében, és egyenest illesztettünk a kapott adatokra. Mivel tudjuk, hogy két egymás után következő gerjesztés $\lambda / 2$ távolságra van egymástól, így a meredekség pontosan ezt adja meg. Ezt 2-vel beszorozva megkapjuk a hullámhosszt: $\lambda = 8,786$ mm. Mivel a frekvenciát nem változtattuk, így ebből a hangsebesség $353,7$ m/s-nak adódott. A 3. feladathoz hasonlóan itt is használhatunk beépített hibaszámítást az egyenesillesztésből. Ebből a hangsebesség ingadozása $\pm 7{,}2$ m/s-nak adódik.
 
 
-\begin{figure}[htp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{amp_vs_poz.pdf}
     \caption*{4. feladat: Amplitúdó gerjesztés}
     \label{amp_vs_poz_grafikon}
 \end{figure}
 
-\begin{figure}[htp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{poz_vs_n_max.pdf}
-    \caption*{4. feladat: Tavolsag az erositesek sorszámának függvényében. A meredekség megadja a félhullámhosszt ($\frac{\lambda}{2} = 4{,}39$ mm).}
+    \caption*{4. feladat: Távolság az erősítések sorszámának függvényében. A meredekség megadja a félhullámhosszt ($\frac{\lambda}{2} = 4{,}39$ mm).}
     \label{poz_vs_n_max_grafikon}
 \end{figure}
 
@@ -185,12 +181,12 @@ Ezután egy másik grafikonon is ábrázoltuk a maximális erősítések helyeit
 
 \section*{5. feladat}
 
-Ebben a feladatban a hangsebességet mértük a time-of-flight módszerrel. Rövid idejű impulzussorozatokkal gerjesztettük az adót. Az impulzusok hosszát 36,75us állítottuk (ami pont a rezonanciafrekvenciához tartozó periódusidő páratlan számú többszöröse). Az időt a meghajtójel lefutó ága és a gerjesztés 3. pozitív csúcsa között mértük. Az eredeti távolságot az adó és a vevő között 16,4 cm-nek mértük vonalzóval, majd az mikrométerorsó segítségével 2 mm-enként újra megmértük a repülési időt. A mérést ilyen módon kétszer is elvégeztük, mindkétszer 347.8 m/s-ra adódott a hangsebesség.
+Ebben a feladatban a hangsebességet mértük a time-of-flight módszerrel. Rövid idejű impulzussorozatokkal gerjesztettük az adót. Az impulzusok hosszát 36,75 $\mu\text{s}$-ra állítottuk (ami pont a rezonanciafrekvenciához tartozó periódusidő páratlan számú többszöröse). Az időt a meghajtójel lefutó ága és a gerjesztés 3. pozitív csúcsa között mértük. Az eredeti távolságot az adó és a vevő között 16,4 cm-nek mértük vonalzóval, majd a mikrométerorsó segítségével 2 mm-enként újra megmértük a repülési időt. A mérést ilyen módon kétszer is elvégeztük, mindkétszer 347,8 m/s-ra adódott a hangsebesség.
 
-A mérésnél a hibát okozhatja az orsó pontatlan leolvasása illetve az, hogy azidőkülönbséget az oszcilloszkópon kézi módszerrel (a kurzorokkal) mértük, így abból kifolyólag lehet bizonytalanság. Ezt igyekeztük kiküszöbölni azzal, hogy a mérést kétszer is elvégeztük, de mint látható nagyon hasonló adatokat kaptunk mindkét alkalommal.
+A mérésnél a hibát okozhatja az orsó pontatlan leolvasása, illetve az, hogy az időkülönbséget az oszcilloszkópon kézi módszerrel (a kurzorokkal) mértük, így abból kifolyólag is lehet bizonytalanság. Ezt igyekeztük kiküszöbölni azzal, hogy a mérést kétszer is elvégeztük, de mint látható, nagyon hasonló adatokat kaptunk mindkét alkalommal.
 
 
-\begin{figure}[htp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{time_of_flight.pdf}
     \caption*{5. feladat: A hangsebesség meghatározása (time of flight)}
@@ -202,7 +198,7 @@ A mérésnél a hibát okozhatja az orsó pontatlan leolvasása illetve az, hogy
 
 A tapasztalat az, hogy mivel közel van az adó és a vevő, így van egy korai kis gerjesztés, és utána egy nagy gerjesztés, ami a tükörről verődik vissza. A kezdeti távolság 14,0 cm (nagy a bizonytalansága). Ezt csökkentettük a mikrométeres orsó tekerésével, ami eredetileg 25 mm-nél állt. Ugyanúgy a gerjesztőjel lecsengő élére és a 3. válaszpulzusra állítottam be a kurzorokat.
 
-\begin{figure}[htp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{return_time_vs_poz.pdf}
     \caption*{6. feladat: Tényleges és időből becsült távolság a 3. feladatban kapott $c$ felhasználásával}
@@ -212,22 +208,32 @@ A tapasztalat az, hogy mivel közel van az adó és a vevő, így van egy korai 
 A 3. feladatban meghatározott hangsebesség felhasználásával kiszámítottuk az impulzus-visszhang menetidejéből a tényleges megtett utat (osztva kettővel: egy oda-vissza út miatt). Ezt a becsült távolságot ábrázoltuk az általunk kézzel beállított tényleges (de nagy bizonytalanságú) távolság függvényében. 
 Az illesztett egyenes meredeksége 0,98 lett, ami majdnem 1, mutatva a két mennyiség nagyszerű arányosságát. A ~21,8 mm-es tengelymetszet egy állandó szisztematikus hibát – főképp a 14,0 cm-es kezdeti távolság mérési pontatlanságát és esetleges akusztikai és elektromos időkéséseket – takarja.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{abs_error_vs_poz.pdf}
+    \caption*{6. feladat: A távolságbecslés abszolút hibája pontonként}
+    \label{abs_error_grafikon}
+\end{figure}
+
 
 \section*{7. feladat}
 
-Ebben a feladatban az oszcilloszkóp beállításait az úgy hagytuk, ahogy az előző feladatban volt, viszont a mérési összeállítás jelentősen változott. Egy Michelson-interferométert állítottunk öösze két adó, egy vevő, két tükör és egy féligáteresztő tükör segítségével. A mérési elrendezés közepén állt a félig áteresztő tükör, és megpróbáltuk szimmetrikusan elrendezni körülötte a dolgokat
+Ebben a feladatban az oszcilloszkóp beállításait úgy hagytuk, ahogy az előző feladatban volt, viszont a mérési összeállítás jelentősen változott. Egy Michelson-interferométert állítottunk össze két adó, egy vevő, két tükör és egy féligáteresztő tükör segítségével. A mérési elrendezés közepén állt a félig áteresztő tükör, és megpróbáltuk szimmetrikusan elrendezni körülötte a komponenseket.
 A mérési elrendezésben a távolságok így alakultak:
-vevő-fixtükör: 19.5cm
-vevő-féligáteresztő tükör: 10.5cm
-adó-mozgótükör: 19.5cm
-adó-féligáteresztő tükör:10cm
+
+vevő-fixtükör: 19,5 cm
+
+vevő-féligáteresztő tükör: 10,5 cm
+
+adó-mozgótükör: 19,5 cm
+
+adó-féligáteresztő tükör: 10 cm
+
 Konstruktív és destruktív interferenciahelyeket kerestünk olyan módon, hogy a mikrométeres orsót tekertük. A távolságokat a mikrométeres orsó állásából, az amplitúdókat pedig az oszcilloszkópról olvastuk le. Az alábbi táblázatban láthatóak az eredményeink.
 
-A mérési hiba származhat a mikrométerorsó pontatlan leolvasásából és abból hogy az ingadozó jel miatt az amplitúdókat sem tudtuk pontosan leolvasni. Még úgy sem, hogy nem kézzel olvastuk le. Ezen kívül az sem biztos, hogy a féligáteresztő tükör szimmetrikus abból a szempontból, hogy melyik oldala mennyire áteresztő.
+A mérési hiba származhat a mikrométerorsó pontatlan leolvasásából és abból, hogy az ingadozó jel miatt az amplitúdókat sem tudtuk pontosan leolvasni. Még úgy sem, hogy nem kézzel olvastuk le. Ezenkívül az sem biztos, hogy a féligáteresztő tükör szimmetrikus abból a szempontból, hogy melyik oldala mennyire áteresztő.
 
-
-```latex
-\begin{table}[h!]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
@@ -236,18 +242,22 @@ A mérési hiba származhat a mikrométerorsó pontatlan leolvasásából és ab
     \end{tabular}
     \caption{A 7. feladat mérési adatai}
 \end{table}
-```
 
 
 \section*{8. feladat}
 
-Ebben a feladatban az ultrahangos fókuszálást vizsgáltuk egy olyan mérési elrendezésben, ahol két adó és egy vevő játszott szerepet. A vevőt 14 cm-es távolságra helyeztük el az adóktól (ezt vonalzóval mértük). A vevőt a mikrométerorsón helyeztük el, így tudtuk mozgatni az adók vonalábal párhuzamosan, és meg tudtunk keresni interferenciahelyeket. Ezt több különböző szögben is elvégeztük. Azt tapasztaltuk, hogy minél nagyobb szögben állítottuk be az adókat, annál nagyobb volt a maximális amplitúdó.
-Eredmények külöböző kezdőfázisokban:
-0 fokot beállítva: a maximális amplitúdót 19.4cm orsóállásnál  tapasztaltuk, 668.0mV volt.
-60 fokot beállítva: a maximális amplitúdót 1.90cm orsóállásnál tapasztaltuk, ez 764.0mV -nak adódott.
-120 fokot beállítva: a maximális amplitúdót 4.94cm orsóállásnál tapasztaltuk, 787.5mV -nak adódott.
-180 fokot beállítva: a maximális amplitúdót 8.15cm orsóállásnál tapsztaltuk, itt 775.0mV -nak adodott.
+Ebben a feladatban az ultrahangos fókuszálást vizsgáltuk egy olyan mérési elrendezésben, ahol két adó és egy vevő játszott szerepet. A vevőt 14 cm-es távolságra helyeztük el az adóktól (ezt vonalzóval mértük). A vevőt a mikrométerorsón helyeztük el, így tudtuk mozgatni az adók vonalával párhuzamosan, és meg tudtunk keresni interferenciahelyeket. Ezt több különböző szögben is elvégeztük. Azt tapasztaltuk, hogy minél nagyobb szögben állítottuk be az adókat, annál nagyobb volt a maximális amplitúdó.
 
-A hibák oka lehet részben a rossz leolvasása a mikrométerorsónak, illetve az amplitúdók pontatlan meghatározása az enyhéningadozó jel miatt.
+Eredmények különböző kezdőfázisokban:
+
+0 fokot beállítva: a maximális amplitúdót 19,4 cm orsóállásnál tapasztaltuk, 668,0 mV volt.
+
+60 fokot beállítva: a maximális amplitúdót 1,90 cm orsóállásnál tapasztaltuk, ez 764,0 mV-nak adódott.
+
+120 fokot beállítva: a maximális amplitúdót 4,94 cm orsóállásnál tapasztaltuk, ez 787,5 mV-nak adódott.
+
+180 fokot beállítva: a maximális amplitúdót 8,15 cm orsóállásnál tapasztaltuk, itt 775,0 mV-nak adódott.
+
+A hibák oka lehet részben a mikrométerorsó rossz leolvasása, illetve az amplitúdók pontatlan meghatározása az enyhén ingadozó jel miatt.
 
 \end{document}
