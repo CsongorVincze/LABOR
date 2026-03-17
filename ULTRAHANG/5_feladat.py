@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.optimize as opt
 
 # --- BEÁLLÍTÁSOK ---
 plt.rcParams.update({
@@ -50,35 +49,35 @@ if len(valid_times) > 0:
         return a * x + b
     
     if len(poz) > 1:
-        # Illesztés a scipy.optimize.curve_fit fv-nyel az átlagra
-        popt, pcov = opt.curve_fit(linear_model, poz, time_avg)
-        a, b = popt
-        perr = np.sqrt(np.diag(pcov)) # a paraméterek hibája
+        # Illesztés a numpy.polyfit fv-nyel az átlagra
+        p, cov_matrix = np.polyfit(poz, time_avg, 1, cov=True)
+        a, b = p
+        perr = [np.sqrt(cov_matrix[0, 0]), np.sqrt(cov_matrix[1, 1])]
         
         # Illesztett pontok generálása az ábrához
         p_fit = np.linspace(min(poz), max(poz), 100)
-        t_fit = linear_model(p_fit, a, b)
+        t_fit = a * p_fit + b
         
         # Megformázzuk a hiba feliratot
         if len(valid_times) > 1:
-            eq_label = f'Illesztett egyenes (átlagra): $\Delta t = {a:.4f} \cdot s {b:+.4f}$'
+            eq_label = f'Illesztett egyenes (átlagra): $\\Delta t = {a:.4f} \\cdot s {b:+.4f}$'
         else:
-            eq_label = f'Illesztett egyenes: $\Delta t = {a:.4f} \cdot s {b:+.4f}$'
+            eq_label = f'Illesztett egyenes: $\\Delta t = {a:.4f} \\cdot s {b:+.4f}$'
             
         plt.plot(p_fit, t_fit, '-', color='#ff7f0e', linewidth=2, label=eq_label)
         
         # Eredmény kiírása a konzolra
-        print(f"--- Illesztés eredményei ({len(valid_times)} mérés{' átlagára' if len(valid_times)>1 else ''}) ---")
-        print(f"Meredekség (a): {a:.5f} ± {perr[0]:.5f} ms/cm (vagy s/m stb, mert az egység nem volt megadva)")
-        print(f"Y-metszet (b): {b:.4f} ± {perr[1]:.4f}")
+        print(f"--- Illesztes eredmenyei ({len(valid_times)} meres atlaga) ---")
+        print(f"Meredekseg (a): {a:.5f} +/- {perr[0]:.5f} mm/us")
+        print(f"Y-metszet (b): {b:.4f} +/- {perr[1]:.4f} us")
         
-        # Sebesség számítása, ha a poz [cm]-ben és az idő [ms]-ben van:
-        # v = 1/a -> cm/ms = 10 m/s szorzó, de a feladat egységei alapján érdemes megnézni
+        # Sebesség számítása, távolság mm-ben, idő ms-ben lévén
+        # De várjunk, az adatok poz=mm, time_diff=ms
+        # Hahaha, ha v = s/t -> v = (1 / a), és mértékállandó mm/ms = m/s.
         if a != 0:
-            # Tegyük fel játéknak: ha poz [cm] és idő [ms] -> 1 cm/ms = 10 m/s
-            v_szamitott = abs((1.0 / a) * 10)
-            error_perc = (perr[0] / abs(a)) * 100
-            print(f"Számított sebesség (ha poz[cm], idő[ms]): {v_szamitott:.2f} m/s (± {error_perc:.2f}%)")
+            v_szamitott = abs(1.0 / a)    # mm/ms = m/s
+            err_v_szamitott = abs(1 / (a**2)) * perr[0]
+            print(f"Szamitott sebesseg (v): {v_szamitott:.2f} +/- {err_v_szamitott:.2f} m/s")
         print("----------------------------")
 else:
     print("Figyelem: A 'poz' és az idő tömbök mérete nem egyezik, vagy üresek.")

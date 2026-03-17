@@ -25,11 +25,23 @@ y_all = np.concatenate((time_us_1, time_us_2))   # Idő a függőleges (Y) tenge
 
 # --- LINEÁRIS ILLESZTÉS ---
 # y = m*x + b, ahol m a meredekség [us/mm], b a tengelymetszet [us]
-m, b = np.polyfit(x_all, y_all, 1)
+p, cov_matrix = np.polyfit(x_all, y_all, 1, cov=True)
+m, b = p
+
+# Szórások (hibák) a kovarianciamátrix főátlójából
+err_m = np.sqrt(cov_matrix[0, 0])
+err_b = np.sqrt(cov_matrix[1, 1])
+
+# Sebesség kiszámítása: v = 1 / m (és konverzió mm/us-ről m/s-ra -> szorzás 1000-rel)
+v_ms = (1.0 / m) * 1000
+
+# Hibaterjedés: Delta v = | 1000 / m^2 | * err_m
+err_v = abs(1000.0 / (m**2)) * err_m
 
 print("--- Eredmenyek a linearis illesztesbol ---")
-print(f"Meredekseg (m): {m:.4f} us/mm")
-print(f"Tengelymetszet (b): {b:.4f} us")
+print(f"Meredekseg (m): {m:.4f} ± {err_m:.4f} us/mm")
+print(f"Tengelymetszet (b): {b:.4f} ± {err_b:.4f} us")
+print(f"Hangsebesseg (v): {v_ms:.2f} ± {err_v:.2f} m/s")
 print("---------------------------------------")
 
 # --- ÁBRÁZOLÁS ---

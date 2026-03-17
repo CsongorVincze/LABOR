@@ -23,16 +23,26 @@ n_max = np.arange(1, len(poz_sorted) + 1)
 
 # --- LINEÁRIS ILLESZTÉS ---
 # Távolság = m * (maximum sorszáma) + b, ahol m adja meg a félhullámhosszt (lambda / 2)
-m, b = np.polyfit(n_max, poz_sorted, 1)
+p, cov_matrix = np.polyfit(n_max, poz_sorted, 1, cov=True)
+m, b = p
+
+err_m = np.sqrt(cov_matrix[0, 0])
+err_b = np.sqrt(cov_matrix[1, 1])
 
 f_rez = 40.81  # Később a jegyzőkönyv szerint: rezonanciafrekvencia 40.81 kHz
+err_f_rez = 0.01 # Becsült leolvasási hibája a függvénygenerátornak
+
 lambda_mm = 2 * m
+err_lambda = 2 * err_m
+
 v_ms = lambda_mm * f_rez 
+# Hibaterjedés: (Delta v / v)^2 = (Delta lambda / lambda)^2 + (Delta f / f)^2
+err_v_ms = v_ms * np.sqrt((err_lambda / lambda_mm)**2 + (err_f_rez / f_rez)**2)
 
 print("--- Eredmenyek a linearis illesztesbol (4. feladat) ---")
-print(f"Meredekseg (lambda/2): {m:.4f} mm")
-print(f"Hullamhossz (lambda): {lambda_mm:.4f} mm")
-print(f"Kiszamitott hangsebesseg (f = {f_rez} kHz eseten): {v_ms:.2f} m/s")
+print(f"Meredekseg (lambda/2): {m:.4f} +/- {err_m:.4f} mm")
+print(f"Hullamhossz (lambda): {lambda_mm:.4f} +/- {err_lambda:.4f} mm")
+print(f"Kiszamitott hangsebesseg (f = {f_rez} +/- {err_f_rez} kHz eseten): {v_ms:.2f} +/- {err_v_ms:.2f} m/s")
 print("-----------------------------------------------------")
 
 # --- 1. ÁBRÁZOLÁS: Amplitúdó - Pozíció ---
