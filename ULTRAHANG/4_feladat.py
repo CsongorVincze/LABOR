@@ -17,19 +17,53 @@ plt.rcParams.update({
 poz = np.array([24.34, 19.25, 15.42, 11.17, 6.12, 2.32])
 amp = np.array([772.5, 799.0, 845.5, 868.5, 887.5, 931.5])
 
-# --- ÁBRÁZOLÁS ---
-plt.figure(figsize=(8, 6))
-plt.plot(poz, amp, 'o', color='#d62728', markersize=8, label="Mért adatok")
+# Rendezzük sorba távolság szerint (maximumok sorszámozásához)
+poz_sorted = np.sort(poz)
+n_max = np.arange(1, len(poz_sorted) + 1)
 
+# --- LINEÁRIS ILLESZTÉS ---
+# Távolság = m * (maximum sorszáma) + b, ahol m adja meg a félhullámhosszt (lambda / 2)
+m, b = np.polyfit(n_max, poz_sorted, 1)
+
+f_rez = 40.81  # Később a jegyzőkönyv szerint: rezonanciafrekvencia 40.81 kHz
+lambda_mm = 2 * m
+v_ms = lambda_mm * f_rez 
+
+print("--- Eredmenyek a linearis illesztesbol (4. feladat) ---")
+print(f"Meredekseg (lambda/2): {m:.4f} mm")
+print(f"Hullamhossz (lambda): {lambda_mm:.4f} mm")
+print(f"Kiszamitott hangsebesseg (f = {f_rez} kHz eseten): {v_ms:.2f} m/s")
+print("-----------------------------------------------------")
+
+# --- 1. ÁBRÁZOLÁS: Amplitúdó - Pozíció ---
+plt.figure(figsize=(7, 5))
+plt.plot(poz, amp, 'o', color='#d62728', markersize=8, label="Mért adatok")
 plt.title('Amplitúdó a pozíció függvényében')
 plt.xlabel(r'Pozíció, $x$ [mm]')
 plt.ylabel(r'Amplitúdó csúcsértéke, $U_{pp}$ [mV]')
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.legend()
 plt.tight_layout()
-
-# Kép mentése
 plt.savefig('amp_vs_poz.pdf')
-print("A grafikon sikeresen lementve 'amp_vs_poz.pdf' néven.")
+plt.close()
 
-plt.show()
+# --- 2. ÁBRÁZOLÁS: Pozíció - Maximum sorszáma ---
+plt.figure(figsize=(7, 5))
+plt.plot(n_max, poz_sorted, 'bo', label='Mért pozíciók', markersize=8, alpha=0.7)
+
+n_fit = np.linspace(0, np.max(n_max) + 1, 100)
+poz_fit = m * n_fit + b
+eq_str = f'Illesztett egyenes\n$x = {m:.3f} \\cdot n {"+" if b >= 0 else "-"} {abs(b):.3f}$'
+plt.plot(n_fit, poz_fit, 'k--', linewidth=2, label=eq_str)
+
+plt.title('Maximumhelyek pozíciója az állóhullámban')
+plt.xlabel('Maximum sorszáma, $n$')
+plt.ylabel(r'Pozíció, $x$ [mm]')
+plt.xticks(n_max)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
+plt.savefig('poz_vs_n_max.pdf')
+plt.close()
+
+print("A grafikonok sikeresen lementve 'amp_vs_poz.pdf' és 'poz_vs_n_max.pdf' néven.")
