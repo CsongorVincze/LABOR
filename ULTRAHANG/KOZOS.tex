@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{caption} % Required for \captionof
 
 \title{Ultrahangos mérés}
 \author{Kern Luca, Csongor Vincze}
@@ -81,6 +82,13 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
     \label{tab:atviteli_karakterisztika}
 \end{table}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{2_feladat_diagram1.pdf}
+    \caption{Az adó-vevő páros átviteli karakterisztikája (Széles sáv)}
+    \label{fig:atviteli_karakterisztika_szeles_sav}
+\end{figure}
+
 
 \begin{enumerate}
     \item A legalacsonyabb frekvenciájú jel, amit ezzel a beállítással mérni lehet: 
@@ -118,6 +126,13 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
     \label{rezonancia freki}
 \end{table}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{2_feladat_diagram2.pdf}
+    \caption{Rezonanciafrekvencia környezete (diagram)}
+    \label{fig:rezonancia_diagram}
+\end{figure}
+
 
 
 
@@ -126,9 +141,10 @@ Lehelyeztük a két adó-vevőt körülbelül 10 cm távolságra, és kissé elf
 A beállítások ugyanazok voltak, mint az előző feladatban, azzal a különbséggel, hogy most a jel frekvenciáját a mért rezonanciafrekvenciára állítottuk (ami 40,25 KHz volt). Ezt a feladat során nem állítottuk át. Csatolásnak AC-t állítottunk be. Amit a mérés során változtattunk, az a két ultrahangos jelátalakító távolsága volt. Ezt egy mikrométer orsós transzlációs mozgató segítségével tettük meg, amellyel egyenletes, 2 mm-es távolságváltozást állítottunk be.
 
 Beállítottuk a frekcenciát 40.25kHz-re, mivel ezt mértük mint rezonanciafrekvencia. Kétszer mértünk és a következő adatokat kaptuk.:
-    \caption{A hangsebesség mérése a távolság függvényében.}
-    \label{tab:hangsebesseg_meres}
-\end{table}
+%\begin{table}
+%    \caption{A hangsebesség mérése a távolság függvényében.}
+%    \label{tab:hangsebesseg_meres}
+%\end{table}
 
 A hullámhossz:
 
@@ -155,7 +171,7 @@ Utolagosan ujramerve a rezonanciafrekvencia 40,81kHznek adódott, 0,01kHzes mozg
     \centering
     \includegraphics[width=10cm]{amp_vs_poz.pdf}
     \caption{Amplitudo gerjesztes 4.feladat}
-    \label{hangsebesség_grafikon}
+    \label{amp_vs_poz_grafikon}
 \end{figure}
 
 \section{5.feladat}
@@ -168,7 +184,7 @@ A meghajtojel lefuto eletol mertem a gerjesztes 3. pozitiv csucsaig.
     \centering
     \includegraphics[width=10cm]{time_of_flight.pdf}
     \caption{A hangsebesség meghatározása (time of flight 5. feladat)}
-    \label{hangsebesség_grafikon}
+    \label{time_of_flight_grafikon}
 \end{figure}
 
 
