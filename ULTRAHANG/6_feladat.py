@@ -56,4 +56,21 @@ plt.tight_layout()
 
 # Kép mentése
 plt.savefig('return_time_vs_poz.pdf')
-print("A grafikon sikeresen lementve 'return_time_vs_poz.pdf' néven.")
+plt.close()
+
+# --- ÁBRÁZOLÁS 2: Abszolút hiba ---
+plt.figure(figsize=(8, 6))
+
+abs_error_mm = np.abs(actual_dist_mm - estimated_dist_mm)
+plt.plot(actual_dist_mm, abs_error_mm, 'ro-', label='Abszolút hiba', markersize=6, alpha=0.7)
+
+plt.title('Távolságbecslés abszolút hibája')
+plt.xlabel(r'Beállított tényleges távolság, $d_{act}$ [mm]')
+plt.ylabel(r'Abszolút hiba, $|d_{act} - d_{est}|$ [mm]')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
+
+# Kép mentése
+plt.savefig('abs_error_vs_poz.pdf')
+print("A grafikonok sikeresen lementve 'return_time_vs_poz.pdf' és 'abs_error_vs_poz.pdf' néven.")
