@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.optimize as opt
 
 # --- BEÁLLÍTÁSOK ---
 plt.rcParams.update({
@@ -17,53 +16,40 @@ plt.rcParams.update({
 # --- ADATOK ---
 # kezdeti tavolsag 14.0cm (nagy bizonytalansag) csokkentettuk eredetileg 25nel volt
 poz = np.array([25.0, 23.0, 21.0, 19.0, 17.0, 15.0, 13.0, 11.0, 9.0, 7.0, 5.0, 3.0, 1.0])
-return_time = np.array([0.916, 0.906, 0.896, 0.886, 0.874, 0.862, 0.850, 0.836, 0.828, 0.816, 0.804, 0.794, 0.782])
+return_time_ms = np.array([0.916, 0.906, 0.896, 0.886, 0.874, 0.862, 0.850, 0.836, 0.828, 0.816, 0.804, 0.794, 0.782])
+
+# Hangsebesség a 3. feladatból
+v_hang = 346.64 # m/s
+v_hang_mm_us = v_hang / 1000.0 # mm/us
+
+# Tényleges távolság (kezdeti 14.0 cm = 140 mm, az orsó 25 mm-nél jelentett 0 csökkentést)
+actual_dist_mm = 140.0 - (25.0 - poz)
+
+# Becsült távolság az időből: d_est = (v * t) / 2
+return_time_us = return_time_ms * 1000.0
+estimated_dist_mm = (return_time_us * v_hang_mm_us) / 2.0
+
+# --- LINEÁRIS ILLESZTÉS ---
+m, b = np.polyfit(actual_dist_mm, estimated_dist_mm, 1)
+
+print("--- Eredmenyek a linearis illesztesbol (6. feladat) ---")
+print(f"Meredekseg (m): {m:.4f}")
+print(f"Tengelymetszet (b): {b:.4f} mm")
+print("-----------------------------------------------------")
 
 # --- ÁBRÁZOLÁS ---
 plt.figure(figsize=(8, 6))
 
-if len(poz) == len(return_time) and len(poz) > 0:
-    # Ábrázoljuk a mérést
-    plt.plot(poz, return_time, 'o', color='#1f77b4', markersize=6, label="Mért adat (Impulzus-visszhang)")
-    
-    # Egyenes illesztése y = a*x + b alakban
-    def linear_model(x, a, b):
-        return a * x + b
-    
-    if len(poz) > 1:
-        # Illesztés a scipy.optimize.curve_fit fv-nyel
-        popt, pcov = opt.curve_fit(linear_model, poz, return_time)
-        a, b = popt
-        perr = np.sqrt(np.diag(pcov)) # a paraméterek hibája
-        
-        # Illesztett pontok generálása az ábrához
-        p_fit = np.linspace(min(poz), max(poz), 100)
-        t_fit = linear_model(p_fit, a, b)
-        
-        # Megformázzuk a hiba feliratot
-        eq_label = rf'Illesztett egyenes: $t = {a:.4f} \cdot x {b:+.4f}$'
-        plt.plot(p_fit, t_fit, '-', color='#ff7f0e', linewidth=2, label=eq_label)
-        
-        # Eredmény kiírása a konzolra
-        print(f"--- Illesztés eredményei (Impulzus-visszhang) ---")
-        print(f"Meredekség (a): {a:.5f} ± {perr[0]:.5f} ms/cm (?) (A pontos SI átváltás a feladat egységeitől függ)")
-        print(f"Y-metszet (b): {b:.4f} ± {perr[1]:.4f}")
-        
-        if a != 0:
-            # Impulzus visszhangnál az út 2*x, tehát a sebesség: v = 2 * (x / t) => v = 2 * (1 / a)
-            # Tegyük fel játéknak: ha poz [cm] és idő [ms] -> 1 cm/ms = 10 m/s => v = 2 / a * 10 [m/s]
-            v_szamitott = abs((2.0 / a) * 10)
-            error_perc = (perr[0] / abs(a)) * 100
-            print(f"Számított sebesség impulzus-visszhangra (ha poz[cm], idő[ms]): {v_szamitott:.2f} m/s (± {error_perc:.2f}%)")
-        print("----------------------------")
-else:
-    print("Figyelem: A 'poz' és a 'return_time' tömbök mérete nem egyezik, vagy üresek.")
-    print(f"Kérlek ellenőrizd az adatokat!")
+plt.plot(actual_dist_mm, estimated_dist_mm, 'bo', label='Adatpontok', markersize=6, alpha=0.7)
 
+x_fit = np.linspace(min(actual_dist_mm) - 2, max(actual_dist_mm) + 2, 100)
+y_fit = m * x_fit + b
+eq_str = f'Illesztett egyenes\n$d_{{est}} = {m:.3f} \\cdot d_{{act}} {"+" if b >= 0 else "-"} {abs(b):.1f}$'
+plt.plot(x_fit, y_fit, 'k--', linewidth=2, label=eq_str)
 
-plt.title('Visszaérkezési idő a pozíció függvényében (Impulzus-visszhang)')
-plt.xlabel(r'Pozíció, $x$ [cm / mm]')
-plt.ylabel(r'Visszaérkezési idő, $t$ [ms / $\mu$s]')
+plt.title('Becsült távolság a rögzített (tényleges) távolság függvényében')
+plt.xlabel(r'Beállított tényleges távolság, $d_{act}$ [mm]')
+plt.ylabel(r'Impulzus-időből becsült távolság, $d_{est}$ [mm]')
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.legend()
 plt.tight_layout()
@@ -71,5 +57,3 @@ plt.tight_layout()
 # Kép mentése
 plt.savefig('return_time_vs_poz.pdf')
 print("A grafikon sikeresen lementve 'return_time_vs_poz.pdf' néven.")
-
-plt.show()
