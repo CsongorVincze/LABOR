@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-V = 1 #!ezeket be kell irjad
-I = 1
-C_termosz = 1
-m_x = 1
+V = 7.945 #!ezeket be kell irjad
+I = 6.455
+C_termosz = 107.5
+m_x = 0.774
 
-filename = "4_feladat.csv"
+filename = "5_feladat.csv"
 data = np.genfromtxt(filename, delimiter=',', skip_header=0)
 
 time = data[:, 0]
