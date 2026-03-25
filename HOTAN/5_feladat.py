@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -6,20 +7,28 @@ I = 6.455
 C_termosz = 107.5
 m_x = 0.774
 
-filename = "5_feladat.csv"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(script_dir, 'adatok', '5_feladat.csv')
+
 data = np.genfromtxt(filename, delimiter=',', skip_header=0)
 
 time = data[:, 0]
 resistance = data[:, 1]
 temp = (resistance - 100)/0.385
 
+# Filter data between 70s and 650s for the fitting
+mask = (time >= 70) & (time <= 650)
+time_fit = time[mask]
+temp_fit = temp[mask]
 
-
-
-m, c = np.polyfit(time, temp, 1)
+m, c = np.polyfit(time_fit, temp_fit, 1)
 delta_t = time[-1]
 delta_T = m * delta_t
 c_x = (V*I*delta_t - C_termosz*delta_T)/(m_x*delta_T)
+
+print(f"viz szamolt fajho: {c_x}")
+print(f"kezdeti homerseklet: {temp[0]}")
+print(f"vegso homerseklet: {temp[-1]}")
 
 plt.figure(figsize=(10, 6))
 plt.scatter(time, temp, marker='o', color='b', label='homerseklet az ido fuggvenyeben')
