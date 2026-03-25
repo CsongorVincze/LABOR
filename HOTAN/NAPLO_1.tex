@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{comment}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{microtype}
 
 
@@ -37,7 +39,7 @@ $T_{fekete}= \text{ °C}$
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l|c|c|}
+    \begin{tabular}{|l|c|c|c|}
         \hline
         Termosz & Hőmérővel mért hőmérséklet [°C] & Mért ellenállás [$\\Omega$] & Soros ellenállás [$\\Omega$] \\ \hline
         Zöld 22,1  & 110,7 & 1,3 \\ \hline
@@ -66,12 +68,12 @@ Ezt egyenesillesztésből határoztuk meg, de egyelőre hőmérsékleti korrekci
 
 %hibabecslés: nem a tömegmérés relatív hibája, hanem a 2-vel való osztásnak. Annak van egy 10-15-20%-os hibája. Ezt majd át kell gondolni!
 
-$m_{fekete}=444$ g
-$m_{zöld}=430$ g
+$m_{\text{fekete}}=444$ g
+$m_{\text{zöld}}=430$ g
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
 Becsült hőkapacitás: 
-$C_{fekete}=111$ J/°C
-$C_{zöld}=107,5$ J/°C
+$C_{\text{fekete}}=111$ J/°C
+$C_{\text{zöld}}=107,5$ J/°C
 
 \section*{5. Feladat: A víz fajhőjének mérése elektromos fűtéssel}
 
