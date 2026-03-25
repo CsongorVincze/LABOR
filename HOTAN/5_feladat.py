@@ -14,7 +14,7 @@ data = np.genfromtxt(filename, delimiter=',', skip_header=0)
 
 time = data[:, 0]
 resistance = data[:, 1]
-temp = (resistance - 100)/0.385
+temp = (resistance - 100 - 1.3)/0.425
 
 # Filter data between 70s and 650s for the fitting
 mask = (time >= 70) & (time <= 650)

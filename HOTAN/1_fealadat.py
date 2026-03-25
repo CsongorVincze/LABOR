@@ -1,9 +1,10 @@
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 
 # Replace 'data.csv' with your actual CSV file name!
-filename = 'adatok/1_feladat.csv'
-
+script_dir = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(script_dir, 'adatok', '1_feladat.csv')
 # Read the CSV file. 
 # Notes:
 # - 'delimiter' is set to ',' by default for CSV. Change to ';' if needed.
@@ -18,9 +19,14 @@ except OSError:
 time = data[:, 0]
 resistance = data[:, 1]
 
+# Filter out anomalously large resistance values (e.g., sensor errors like 9.9e+37)
+valid_mask = resistance < 120
+time = time[valid_mask]
+resistance = resistance[valid_mask]
+
 # Subtract 100 and divide by 0.385 
 # This looks like you're calculating temperature for a Pt100 sensor!
-calculated_values = (resistance - 100) / 0.385
+calculated_values = (resistance - 100) / 0.425
 
 # Plot the results
 plt.figure(figsize=(10, 6))

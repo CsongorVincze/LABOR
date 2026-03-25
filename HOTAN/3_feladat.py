@@ -15,8 +15,8 @@ except:
 time = data[:, 0]
 resistance = data[:, 1]
 
-temp = resistance - 100
-temp = temp/0.385
+temp = resistance - 100 - 1.3
+temp = temp/0.425
 
 m, c = np.polyfit(time, temp, 1)
 
