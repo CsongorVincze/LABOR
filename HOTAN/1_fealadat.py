@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Replace 'data.csv' with your actual CSV file name!
-filename = 'data.csv'
+filename = 'adatok/1_feladat.csv'
 
 # Read the CSV file. 
 # Notes:
@@ -24,7 +24,7 @@ calculated_values = (resistance - 100) / 0.385
 
 # Plot the results
 plt.figure(figsize=(10, 6))
-plt.plot(time, calculated_values, marker='o', linestyle='-', color='b', label='Temperature (Pt100)')
+plt.scatter(time, calculated_values, marker='o', color='b', label='Temperature (Pt100)')
 plt.title('Time vs Temperature')
 plt.xlabel('Time')
 plt.ylabel('Temperature / Value')
