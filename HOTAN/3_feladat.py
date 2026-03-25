@@ -18,11 +18,12 @@ temp = temp/0.385
 m, c = np.polyfit(time, temp, 1)
 
 plt.figure(figsize=(10, 6))
-plt.scatter(time, temp, marker='o', color='y', label="homerseklet az ido fuggvenyeben")
+plt.scatter(time, temp, marker='o', color='b', label="homerseklet az ido fuggvenyeben")
 plt.plot(time, c + m*time, linestyle='-', color='r', label=f"Illesztett egyenes: y = {m:.2f}x + {c:.2f}")
 plt.title("3.feladat: a termosz hovesztesege az ido fuggvenyeben")
 plt.xlabel("Ido (s)")
 plt.ylabel("Homerseklet (C)")
 plt.legend()
 plt.tight_layout()
+plt.savefig('3_1_graf.pdf')
 plt.show()
