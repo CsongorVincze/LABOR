@@ -14,7 +14,7 @@ t_hideg = 25.45
 t_meleg = (r_meleg - 100 - 1.7)/0.385
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(script_dir, 'adatok', '7_faladat.csv')
+filename = os.path.join(script_dir, 'adatok', '7_feladat.csv')
 
 data = np.genfromtxt(filename, delimiter=',', skip_header=0)
 
