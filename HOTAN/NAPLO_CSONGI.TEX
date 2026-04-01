@@ -25,11 +25,10 @@ Ebben a mérésben hőtani méréseket végeztünk, melyben többek között meg
 
 \section*{1. Feladat: A hőmérsékleti adatok leolvasása digitális multiméterről}
 
-%Jegyzőkönyv rész:\\
-%Ebben a feladatban a multiméteres hőmérsékletleolvasást gyakoroltuk be. A táblázatban szereplő együtthatók és a képlet alapján meghatároztuk, hogy a mért ellenállások mekkora hőmérsékletnek felelnének meg.
+Ebben a feladatban a multiméteres hőmérsékletleolvasást gyakoroltuk be. A táblázatban szereplő együtthatók és a képlet alapján meghatároztuk, hogy a mért ellenállások mekkora hőmérsékletnek felelnének meg.
 
-%Napló rész:\\
-megfelelő kalibrációs meredekség:\\
+Alább találhatóak az adataink, amelyek azt mutatják be, hogy mekkorának mértük a szobahőmérsékletet a két különböző hőmérővel. Mint láthatjuk, ezek az adatok eltérnek, ennek oka az, hogy a ellenállássos hőmérésnél egy eltolást okoz a kapcsolás soros ellenállása hozzáadódik a hőmérő saját ellenállásához. Ezt a következő feladatban tárgyaljuk részletesebben.
+
 zöld termosz:\\
 $R_{zold}=110.4 \Omega$\\
 $T_{zold}= \text{ 24.5°C}$\\
@@ -49,6 +48,8 @@ Itt a műszer sajnos felvett olyan értékeket is, amik hibásak voltak (overloa
 
 \section*{2. Feladat: A platinahőmérő kalibrálása}
 
+Ebben a feladatban a hőmérők kalibrálását végeztük el, amire azért volt szükség mert ahogy a hőmérők bekötésre kerültek, a saját ellenállásához hozzáadódott a soros ellenállás is, ami egyy érték beli eltoldódást eredményezett volna a kalibrálás hiányában. Ennek érdekében mindkét termoszba hideg vizet töltöttünk, és egyszerre megmértük a hőmérsékleti egyensúly beállta után a két termoszban a víz hőmérésékletét higanyos hőmérővel, és megmértük az ellenállás-hőmérővel is. A mért hőmérékletek különbségéből könnyen megállappítottuk a soros ellenállásokat.
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|c|c|c|}
@@ -56,12 +57,14 @@ Itt a műszer sajnos felvett olyan értékeket is, amik hibásak voltak (overloa
         Termosz & Hőmérővel mért hőmérséklet [°C] & Mért ellenállás [$\Omega$] & Soros ellenállás [$\Omega$] \\ \hline
         Zöld & 22,1 & 110,7 & 1,3 \\ \hline
         Fekete & 22,0 & 111,4 & 2,9 \\ \hline
+        Piros & 22,4 & 110,29 & 1,7 \\ \hline
     \end{tabular}
     \caption{Termoszok hőmérsékleti korrekciója}
     \label{tab:hotan_2}
 \end{table}
 
-Termosz színkódja: zöld\\
+\begin{comment}
+Termosz színkódja: zöld (3)\\
 Egyensúlyi hőmérséklet: 22,1 °C\\
 Mért ellenállás: 110,7 $\Omega$\\
 Soros ellenállás: 1,3 $\Omega$\\
@@ -75,15 +78,14 @@ Termosz színkódja: piros\\
 Egyensúlyi hőmérséklet: 22,4 °C\\
 Mért ellenállás: 110,29 $\Omega$\\
 Soros ellenállás: 1,7 $\Omega$\\
+\end{comment}
 
-%Jegyzőkönyv rész\\
-%Ebben a feladatban a hőmérők kalibrálását végeztük el, amire azért volt szükség mert ahogy a hőmérők bekötésre kerültek, a saját ellenállásához hozzáadódott a soros ellenállás is, ami egyy érték beli eltoldódást eredményezett volna a kalibrálás hiányában. Ennek érdekében mindkét termoszba hideg vizet töltöttünk, és egyszerre megmértük a hőmérsékleti egyensúly beállta után a két termoszban a víz hőmérésékletét higanyos hőmérővel, és megmértük az ellenállás-hőmérővel is. A mért hőmérékletek különbségéből könnyen megállappítottuk a soros ellenállásokat.
-
+Az eredményeinkből látszik, hogy az egyes termoszokban lévő hőmérők valóban kicsit eltérően mérnek. Emelett az is megfigyelhető, hogy a a soros ellenállások csak kis mértékű eltérést okoznak.
+Hibaszámítás: .........                  %kell még!
 
 \section*{3. Feladat: A termosz hőveszteségének mérése}
 
-Hőmérsékletváltozás 1 perc alatt: $\Delta T=1$ °C
-Ezt egyenesillesztésből határoztuk meg, de egyelőre hőmérsékleti korrekció nélkül, de ábrát mellékelünk.
+Ebben a feladatban azt mértük meg, hogy ha egy termoszt megtöltünk forró vízzel akkor mekkora a hőveszteség. Ennek a hőveszteségnek két fő oka lehet. Az egyik az, hogy maga a termosz is átmelegszik (ezt a következő feladatban tárgyaljuk részletesebben), illetve hogy a környezetnek is lead a rendszert valamennyi hőt. Mivel a víz és a termosz közti termikus egyensúly beállta után kezdtünk el mérni, így ezzel a méréssel azt tudtukmegállapítani, hogy a rendszert mennyi hőt ad át a környezetének. 5 percig gyűjtöttünk hőmérséklet adatokat, majd ábrázoltuk ezeket az adatokat az eltelt idő függvényében. Erre a grafikonra egyenest illesztettünk, és meghatároztuk a meredekségét, amiből meghatároztuk,hogy egy perc alatt nagyjából mekkora a hőveszteség. Ez $\Delta T=1$ °C-nak adódott.
 
 \begin{figure}[H]
     \centering
@@ -92,11 +94,14 @@ Ezt egyenesillesztésből határoztuk meg, de egyelőre hőmérsékleti korrekci
     \label{fig:3_1}
 \end{figure}
 
-Látszik, hogy kicsi a hőveszteség, a meredekség szinte 0.
+A grafikonról leolvasható, hogy kicsi a hőveszteség, a meredekség szinte 0, ami megfelel a várakozásainknak.
+Hőmérsékleti korrekció: .........        %kell még!
 
 \section*{4. Feladat: A termosz hőkapacitásának becslése}
 
 %hibabecslés: nem a tömegmérés relatív hibája, hanem a 2-vel való osztásnak. Annak van egy 10-15-20%-os hibája. Ezt majd át kell gondolni!
+
+Ebben a feladatban a termoszok hőkapacitását próbáltuk megállapítani. Ugyanis mint ahogy azt az előző feladatban is említettük, az hogy a termosz mennyi hőt vesz föl, egy olyan dolog, amely akár nagyban is befolyásolhatja, hogy hogyan alakulnak a hő cserék. Azt próbáltuk megállapítani, hogy mégis mennyire. Megmértük mindkét termosz tömegét, és felltételeztük, hogy a belső ésa külső faluk ugyanolyan vastag,és köztük nincsen számottevő hőcsere, így a termikus folyamatokban  résztvevő tömegeket a teljes tömegek felével közelítettük. Ez után a hőkapacitást úgy számoltuk, hogy az irodalmi adatot használtuk föl a rozsdamentes acél fajhőjére. A mért, számolt és felhasznált adataink alább láthatóak.
 
 $m_{\text{fekete}}=444$ g\\
 $m_{\text{piros}}=380$ g\\
@@ -106,6 +111,10 @@ Becsült hőkapacitás:\\
 $C_{\text{fekete}}=111$ J/°C\\
 $C_{\text{z\H{o}ld}}=107,5$ J/°C\\
 $C_{\text{piros}}=95$ J/°C\\
+
+%Ezzel mi legyen?????
+%Megjegyzés: Ezt a számolást is elvégeztük a piros és a zöld színkóddal ellátott termoszokra is, de mivel innentől a legtöbb mérésben már csak a piros termoszt használtuk, a zöld termosz adatait nem tűntettük föl.
+
 \section*{5. Feladat: A víz fajhőjének mérése elektromos fűtéssel}
 
 %fontos: előtte és utána is mérni 1-2 percig!!!
