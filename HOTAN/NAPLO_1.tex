@@ -5,9 +5,9 @@
 \usepackage{float}
 \usepackage{comment}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+
 
 \title{Hőtani mérés}
 \author{Kern Luca, Csongor Vincze}
@@ -27,25 +27,22 @@ Ebben a mérésben hőtani méréseket végeztünk, melyben többek között meg
 
 %Jegyzőkönyv rész:\\
 %Ebben a feladatban a multiméteres hőmérsékletleolvasást gyakoroltuk be. A táblázatban szereplő együtthatók és a képlet alapján meghatároztuk, hogy a mért ellenállások mekkora hőmérsékletnek felelnének meg.
-
+ 
 %Napló rész:\\
-megfelelő kalibrációs meredekség:
-zöld termosz:
-$R_{zold}=110.4 \Omega$
-$T_{zold}= \text{ °C}$
-fekete termosz:
-$R_{fekete}=111.3 \Omega$
-$T_{fekete}= \text{ °C}$
+zöld termosz:\\
+$R_{zold}=110.4 \Omega$\\
+$T_{zold}= \text{ °C}$\\
+fekete termosz:\\
+$R_{fekete}=111.3 \Omega$\\
+$T_{fekete}= \text{ °C}$\\
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{1_1_feladat.pdf}
+    % \includegraphics[]{} % TODO: Add image path here
     \caption*{1. feladat: Mért hőmérséklet az idő függvényében}
     \label{}
 \end{figure}
-
-Itt sajnos felvett olyan értékeket is amik hibásak voltak (overload) ezért azokat kivágtuk a grafikonból.
 
 \section*{2. Feladat: A platinahőmérő kalibrálása}
 
@@ -53,9 +50,9 @@ Itt sajnos felvett olyan értékeket is amik hibásak voltak (overload) ezért a
     \centering
     \begin{tabular}{|l|c|c|c|}
         \hline
-        Termosz & Hőmérővel mért hőmérséklet [°C] & Mért ellenállás [$\Omega$] & Soros ellenállás [$\Omega$] \\ \hline
-        Zöld & 22,1 & 110,7 & 1,3 \\ \hline
-        Fekete & 22,0 & 111,4 & 2,9 \\ \hline
+        Termosz & Hőmérővel mért hőmérséklet °C & Mért ellenállás $\Omega$ & Soros ellenállás $\Omega$ \\ \hline
+        Zöld 22,1  & 110,7 & 1,3 \\ \hline
+        Fekete 22,0 & 111,4 & 2,9 \\ \hline
     \end{tabular}
     \caption{Termoszok hőmérsékleti korrekciója}
     \label{tab:hotan_2}
@@ -71,6 +68,11 @@ Egyensúlyi hőmérséklet: 22,0 °C
 Mért ellenállás: 111,4 $\Omega$
 Soros ellenállás: 2,9 $\Omega$
 
+Termosz színkódja: piros
+Egyensúlyi hőmérséklet: 22,4 °C
+Mért ellenállás: 110,29 $\Omega$
+Soros ellenállás: 1,7 $\Omega$
+
 %Jegyzőkönyv rész\\
 %Ebben a feladatban a hőmérők kalibrálását végeztük el, amire azért volt szükség mert ahogy a hőmérők bekötésre kerültek, a saját ellenállásához hozzáadódott a soros ellenállás is, ami egyy érték beli eltoldódást eredményezett volna a kalibrálás hiányában. Ennek érdekében mindkét termoszba hideg vizet töltöttünk, és egyszerre megmértük a hőmérsékleti egyensúly beállta után a két termoszban a víz hőmérésékletét higanyos hőmérővel, és megmértük az ellenállás-hőmérővel is. A mért hőmérékletek különbségéből könnyen megállappítottuk a soros ellenállásokat.
 
@@ -80,25 +82,16 @@ Soros ellenállás: 2,9 $\Omega$
 Hőmérsékletváltozás 1 perc alatt: $\Delta T=1$ °C
 Ezt egyenesillesztésből határoztuk meg, de egyelőre hőmérsékleti korrekció nélkül, de ábrát mellékelünk.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{3_1_graf.pdf}
-    \caption*{3. feladat: A termosz hővesztesége az idő függvényében}
-    \label{fig:3_1}
-\end{figure}
-
-Látszik, hogy kicsi a hőveszteség a meredekség szinte 0.
-
 \section*{4. Feladat: A termosz hőkapacitásának becslése}
 
 %hibabecslés: nem a tömegmérés relatív hibája, hanem a 2-vel való osztásnak. Annak van egy 10-15-20%-os hibája. Ezt majd át kell gondolni!
 
 $m_{\text{fekete}}=444$ g
-$m_{\text{z\H{o}ld}}=430$ g
+$m_{\text{zöld}}=430$ g
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
-Becsült hőkapacitás:
+Becsült hőkapacitás: 
 $C_{\text{fekete}}=111$ J/°C
-$C_{\text{z\H{o}ld}}=107,5$ J/°C
+$C_{\text{zöld}}=107,5$ J/°C
 
 \section*{5. Feladat: A víz fajhőjének mérése elektromos fűtéssel}
 
@@ -111,27 +104,12 @@ $R_{\text{fűtőtest}}=1,23 \Omega$
 $U_{\text{fűtőtest}}=$7,95 V
 $I_{\text{fűtőtest}}=6,46$ A
 $t=s$
-
-% --- CSONGOR (Local) mérései ---
-% $T_{kezdeti}=20.9$ °C
-% $T_{veg}=29.9$ °C
-% $c_{\text{víz}}=4532 \text{ J/(kg}^{\circ}\text{C)}$
-
-% --- PARTNER (Remote) mérései ---
 $T_{kezdeti}=26,4$ °C
 $T_{veg}=36,4$ °C
 termosz hőkapacitása az előző feladatból
 $c_{\text{víz}}=4092 \text{ J/(kg}^{\circ}\text{C)}$
-% --------------------------------
 
 %fajhő meghatározása egyenesillesztéssel
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{4_1_graf.pdf}
-    \caption*{5. feladat: Fűtött víz hőmérsékletfüggése}
-    \label{fig:5_1}
-\end{figure}
 
 \section*{6. Feladat: Termosz hőkapacitásának mérése keveréssel}
 
@@ -144,14 +122,16 @@ $c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
 termosz hőkapacitása keveréssel: $C_{termosz}=$
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{5_1_graf.pdf}
-    \caption*{6. feladat: Termosz hőkapacitásának mérése keveréssel}
-    \label{fig:6_1}
-\end{figure}
+Újra:\\
+$m_{hideg}=294$ g
+$m_{meleg}=406$ g
+$T_{hideg}=110,4 \Omega$
+$T_{meleg}=141,0 \Omega$
+$T_{\text{egyensúlyi}}= \Omega$
+$c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
+$c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
+termosz hőkapacitása keveréssel: $C_{termosz}=$
 
-Itt a hatodik feladatban még nem volt időnk leellenőrizni az eredményeket.
 
 
 \section*{7. Feladat Az alumínium fajhőjének mérése}
