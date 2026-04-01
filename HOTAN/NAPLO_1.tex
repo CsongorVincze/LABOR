@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{comment}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{microtype}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -19,16 +21,25 @@
 
 \section*{1. Feladat: A hőmérsékleti adatok leolvasása digitális multiméterről}
 
-digitális multiméter: ellenállásmérési üzemmódba, megfelelő mérési tartományba állítottuk.
 megfelelő kalibrációs meredekség:
 zöld termosz:
-$R_{zold}=$110.366
-$T_{zold}=$ 
+$R_{zold}=110.4 \Omega$
+$T_{zold}= \text{ °C}$
 fekete termosz:
 $R_{fekete}=$ 111.290
-$T_{fekete}=$ 
+$T_{fekete}=$
 
-
+\begin{comment}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Eltelt idő [s] & Hőmérséklet [°C] \\ \hline
+    \end{tabular}
+    \caption{Hőmérséklet az idő függvényében}
+    \label{tab:hotan_1}
+\end{table}
+\end{comment}
 
 \begin{figure}[H]
     \centering
@@ -84,7 +95,7 @@ Látszik, hogy kicsi a hőveszteség a meredekség szinte 0.
 $m_{\text{fekete}}=444$ g
 $m_{\text{z\H{o}ld}}=430$ g
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
-Becsült hőkapacitás: 
+Becsült hőkapacitás:
 $C_{\text{fekete}}=111$ J/°C
 $C_{\text{z\H{o}ld}}=107,5$ J/°C
 
@@ -115,12 +126,12 @@ $c_{\text{víz}}=4532 \text{ J/(kg}^{\circ}\text{C)}$
 
 \section*{6. Feladat: Termosz hőkapacitásának mérése keveréssel}
 
-$m_{hideg}=$464 g
-$m_{meleg}=$467 g
-$T_{hideg}=$110,4 $\Omega$
-$T_{meleg}=$141 $\Omega$
-$T_{\text{egyensúlyi}}=$
-$c_{\text{víz}}= 4226 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
+$m_{hideg}=464$ g
+$m_{meleg}=467$ g
+$T_{hideg}=110,4 \Omega$
+$T_{meleg}=141,0 \Omega$
+$T_{\text{egyensúlyi}}=125,0 \Omega$
+$c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
 termosz hőkapacitása keveréssel: $C_{termosz}=$
 
@@ -148,7 +159,7 @@ $m_{\text{víz}}=$
 $T_{\text{víz}}=$
 $T_{\text{egyensúlyi}}=$
 
-$c_{\text{víz}}= 4226 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
+$c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
 $C_{termosz}=$
 $c_{Al}=$
@@ -175,7 +186,7 @@ $m_{\text{víz}}=$
 $T_{\text{víz}}=$
 $T_{\text{egyensúlyi}}=$
 
-$c_{\text{víz}}= 4226 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
+$c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
 $C_{termosz}=$
 $c_{Cu}=$
@@ -196,7 +207,7 @@ $T_{\text{egyensúlyi}}=$
 $m_{\text{teljes}}=$ 
 $m_{\text{jég}}=$
 
-$c_{\text{víz}}= 4226 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
+$c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$   %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$
 $C_{termosz}=$
 $L_{f}=$ 
