@@ -28,3 +28,9 @@ plt.legend()
 plt.tight_layout()
 plt.savefig('6_1_graf.pdf')
 plt.show()
+
+
+# Thideg = 21.41C
+# c_termosz = -163.85
+
+# BAJJJJJJ

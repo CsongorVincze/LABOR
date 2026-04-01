@@ -2,9 +2,9 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-m_hideg = 0.464
-m_meleg = 0.467
-
+m_hideg = 0.294 #830g
+m_meleg = 0.406
+# 134.4C meleg
 r_hideg = 110.4
 r_meleg = 141.0
 
@@ -12,7 +12,7 @@ c_v = 4178
 t_hideg = 
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(script_dir, 'adatok', '6_feladat.csv')
+filename = os.path.join(script_dir, 'adatok', '6_b_feladat.csv')
 
 data = np.genfromtxt(filename, delimiter=',', skip_header=0)
 
