@@ -5,11 +5,9 @@
 \usepackage{float}
 \usepackage{comment}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{microtype}
 
 \title{Hőtani mérés}
 \author{Kern Luca, Csongor Vincze}
@@ -19,27 +17,26 @@
 
 \maketitle
 
+\begin{comment}
+\section*{Absztrakt}
+
+Ebben a mérésben hőtani méréseket végeztünk, melyben többek között meghatároztuk a víz fajhőjét elég nagy pontossággal, a hazsnált rozsdamentes acél termoszok hőkapactiitását, illetve más egyebeket. A mérőműszereink közt fontos szerepet játszott a vékony platina ellenállás-hőmérséklet összefüggésén alapuló digitális hőmérő.
+\end{comment}
+
 \section*{1. Feladat: A hőmérsékleti adatok leolvasása digitális multiméterről}
 
+%Jegyzőkönyv rész:\\
+%Ebben a feladatban a multiméteres hőmérsékletleolvasást gyakoroltuk be. A táblázatban szereplő együtthatók és a képlet alapján meghatároztuk, hogy a mért ellenállások mekkora hőmérsékletnek felelnének meg.
+
+%Napló rész:\\
 megfelelő kalibrációs meredekség:
 zöld termosz:
 $R_{zold}=110.4 \Omega$
 $T_{zold}= \text{ °C}$
 fekete termosz:
-$R_{fekete}=$ 111.290
-$T_{fekete}=$
+$R_{fekete}=111.3 \Omega$
+$T_{fekete}= \text{ °C}$
 
-\begin{comment}
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        Eltelt idő [s] & Hőmérséklet [°C] \\ \hline
-    \end{tabular}
-    \caption{Hőmérséklet az idő függvényében}
-    \label{tab:hotan_1}
-\end{table}
-\end{comment}
 
 \begin{figure}[H]
     \centering
@@ -73,6 +70,10 @@ Termosz színkódja: fekete
 Egyensúlyi hőmérséklet: 22,0 °C
 Mért ellenállás: 111,4 $\Omega$
 Soros ellenállás: 2,9 $\Omega$
+
+%Jegyzőkönyv rész\\
+%Ebben a feladatban a hőmérők kalibrálását végeztük el, amire azért volt szükség mert ahogy a hőmérők bekötésre kerültek, a saját ellenállásához hozzáadódott a soros ellenállás is, ami egyy érték beli eltoldódást eredményezett volna a kalibrálás hiányában. Ennek érdekében mindkét termoszba hideg vizet töltöttünk, és egyszerre megmértük a hőmérsékleti egyensúly beállta után a két termoszban a víz hőmérésékletét higanyos hőmérővel, és megmértük az ellenállás-hőmérővel is. A mért hőmérékletek különbségéből könnyen megállappítottuk a soros ellenállásokat.
+
 
 \section*{3. Feladat: A termosz hőveszteségének mérése}
 
@@ -110,10 +111,18 @@ $R_{\text{fűtőtest}}=1,23 \Omega$
 $U_{\text{fűtőtest}}=$7,95 V
 $I_{\text{fűtőtest}}=6,46$ A
 $t=s$
-$T_{kezdeti}=20.9$ °C
-$T_{veg}=29.9$ °C
+
+% --- CSONGOR (Local) mérései ---
+% $T_{kezdeti}=20.9$ °C
+% $T_{veg}=29.9$ °C
+% $c_{\text{víz}}=4532 \text{ J/(kg}^{\circ}\text{C)}$
+
+% --- PARTNER (Remote) mérései ---
+$T_{kezdeti}=26,4$ °C
+$T_{veg}=36,4$ °C
 termosz hőkapacitása az előző feladatból
-$c_{\text{víz}}=4532 \text{ J/(kg}^{\circ}\text{C)}$
+$c_{\text{víz}}=4092 \text{ J/(kg}^{\circ}\text{C)}$
+% --------------------------------
 
 %fajhő meghatározása egyenesillesztéssel
 
