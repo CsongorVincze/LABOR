@@ -27,6 +27,7 @@ c_rez = (c_v * m_meleg * (t_kozos - t_meleg) + C_termosz * (t_kozos - t_meleg)) 
 
 print( f"rez_fajho: {c_rez:.1f} kJ/kg" )
 
+plt.rcParams.update({'font.size': 18})
 plt.figure(figsize=(10, 6))
 plt.scatter(time, temp, marker='o', color='b', label='homerseklet az ido fuggvenyeben')
 plt.xlabel("Ido (s)")

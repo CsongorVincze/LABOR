@@ -33,6 +33,7 @@ print( f"Termosz hokapacitas: {C:.1f} J/K" )
 # Thideg = 21.41C
 # c_termosz = -163.85
 # FIXME: you had issues here before
+plt.rcParams.update({'font.size': 18})
 plt.figure(figsize=(10, 6))
 plt.scatter(time, temp, marker='o', color='b', label='homerseklet az ido fuggvenyeben')
 plt.xlabel("Ido (s)")

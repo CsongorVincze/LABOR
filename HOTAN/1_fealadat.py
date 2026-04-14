@@ -32,7 +32,7 @@ calculated_values_z = (resistance_z - 100) / 0.385
 
 
 # Plot the results
-plt.rcParams.update({'font.size': 14})
+plt.rcParams.update({'font.size': 18})
 
 plt.figure(figsize=(10, 6))
 plt.scatter(time_f, calculated_values_f, marker='o', color='black', label='Fekete termosz')

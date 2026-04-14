@@ -16,7 +16,7 @@ filename = os.path.join(script_dir, 'adatok', '9_b_feladat.csv')
 
 data = np.genfromtxt(filename, delimiter=',', skip_header=0)
 
-time = data[3900:, 0]
+time = data[3900:, 0] - data[3900, 0]
 resistance = data[3900:, 1]
 temp = (resistance - 100 - 1.7)/0.385
 
@@ -27,6 +27,7 @@ L_j = (c_v*m_meleg*(t_meleg - temp[-1]) - c_v*m_jeg*temp[-1] + C_termosz*(t_mele
 
 print( f"jeg_olvadasho: {L_j:.1f} kJ/kg" )
 
+plt.rcParams.update({'font.size': 18})
 plt.figure(figsize=(10, 6))
 plt.scatter(time, temp, marker='o', color='b', label='homerseklet az ido fuggvenyeben')
 plt.xlabel("Ido (s)")

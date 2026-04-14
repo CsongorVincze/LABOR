@@ -20,7 +20,7 @@ temp = temp/0.425
 
 m, c = np.polyfit(time, temp, 1)
 
-plt.rcParams.update({'font.size': 14}) # Ez megnöveli az összes szöveg méretét a grafikonon
+plt.rcParams.update({'font.size': 18}) # Ez megnöveli az összes szöveg méretét a grafikonon
 
 plt.figure(figsize=(10, 6))
 plt.scatter(time, temp, marker='o', color='b', label="Hőmérséklet az idő függvényében")

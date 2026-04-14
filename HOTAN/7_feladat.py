@@ -29,6 +29,7 @@ c_alu = (c_v * m_meleg * (t_kozos - t_meleg) + C_termosz * (t_kozos - t_meleg)) 
 
 print( f"alu_fajho: {c_alu:.1f} kJ/kg" )
 
+plt.rcParams.update({'font.size': 18})
 plt.figure(figsize=(10, 6))
 plt.scatter(time, temp, marker='o', color='b', label='homerseklet az ido fuggvenyeben')
 plt.xlabel("Ido (s)")
