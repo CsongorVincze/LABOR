@@ -20,16 +20,19 @@ temp = temp/0.425
 
 m, c = np.polyfit(time, temp, 1)
 
+plt.rcParams.update({'font.size': 14}) # Ez megnöveli az összes szöveg méretét a grafikonon
+
 plt.figure(figsize=(10, 6))
-plt.scatter(time, temp, marker='o', color='b', label="homerseklet az ido fuggvenyeben")
-plt.plot(time, c + m*time, linestyle='-', color='r', label=f"Illesztett egyenes: y = {m:.2f}x + {c:.2f}")
-plt.title("3.feladat: a termosz hovesztesege az ido fuggvenyeben")
-plt.xlabel("Ido (s)")
-plt.ylabel("Homerseklet (C)")
+plt.scatter(time, temp, marker='o', color='b', label="Hőmérséklet az idő függvényében")
+plt.plot(time, c + m*time, linestyle='-', color='r', label=f"Illesztett egyenes: y = {m:.3f}x + {c:.2f}")
+plt.title("3. feladat: A termosz hővesztesége az idő függvényében")
+plt.xlabel("Idő (s)")
+plt.ylabel("Hőmérséklet (°C)")
 plt.legend()
 plt.tight_layout()
 plt.savefig('3_1_graf.pdf')
 plt.show()
 
-print(f"ez a meredekseg {m}")
-print(f"delta T: {temp[-1] - temp[0]}")
+print(f"A meredekség: {m:.5f}")
+print(f"Delta T: {temp[-1] - temp[0]:.4f} °C")
+print(f"Delta T egy percre: { (temp[-1] - temp[0]) * 60 / (time[-1] - time[0]) } °C")
