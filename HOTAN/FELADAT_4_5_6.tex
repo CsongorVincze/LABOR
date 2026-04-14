@@ -21,13 +21,13 @@
 
 %hibabecslés: nem a tömegmérés relatív hibája, hanem a 2-vel való osztásnak. Annak van egy 10-15-20%-os hibája. Ezt majd át kell gondolni!
 
-Ebben a feladatban a termoszok hőkapacitását próbáltuk megállapítani. Ugyanis mint ahogy azt az előző feladatban is említettük, az hogy a termosz mennyi hőt vesz föl, egy olyan dolog, amely akár nagyban is befolyásolhatja, hogy hogyan alakulnak a hőcserék. Megmértük mindkét termosz tömegét, és felltételeztük, hogy a belső és a külső faluk ugyanolyan vastag,és mivel köztük szinte légüres tér van nincsen a belső és a külsőfalak között számottevő hőcsere. Ezért a termikus folyamatokban  résztvevő tömegeket a termoszok teljes tömegének felével közelítettük, amiket mérleggel mértünk meg. Ezután a hőkapacitást a $C=c*m$ összefüggés alapján számoltuk ki. A rozsdamentes acél fajhőjére az irodalmi adatot, azaz $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$ használtuk föl.
+Ebben a feladatban a vizsgált termoszok belső hőkapacitását becsültük meg geometriai alapon. Ahogy azt korábban már említettük, az a hőmennyiség, amit a mérőedény fala a mérés során felvesz, alapvetően befolyásolja az összes vizsgált folyamat energiamérlegét. Ehhez megmértük az egyes termoszok teljes tömegét. Mivel a felépítésük kétrétegű, feltételeztük, hogy a belső és a külső acélfaluk ugyanolyan vastag, és mivel közöttük kiváló hőszigetelő tulajdonságú vákuum található, nincsen számottevő hőcsere a két falrész között. Emiatt a termikus folyamatokban ténylegesen részt vevő hőtároló tömeget a termosz teljes tömegének felével közelítettük. Ezt követően az edények hőkapacitását a $C = c_{\text{acél}} \cdot \frac{m_{\text{termosz}}}{2}$ összefüggés alapján számítottuk ki, a rozsdamentes acél irodalmi fajhőjének ($c_{\text{rozsdamentes acél}} = 500 \text{ J/(kg}^{\circ}\text{C)}$) felhasználásával.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|c|c|}
         \hline
-        Termosz & Teljes mért tömeg[g] & Becsült hőkapacitás [J/°C] \\\hline
+        Termosz & Teljes mért tömeg [g] & Becsült hőkapacitás [J/$^{\circ}$C] \\\hline
         Zöld & 430 & 107,5 \\ \hline
         Fekete & 444 & 111 \\ \hline
         Piros & 380 & 95 \\ \hline
@@ -50,8 +50,9 @@ $C_{\text{piros}}=95$ J/°C\\
 \section*{5. Feladat: A víz fajhőjének mérése elektromos fűtéssel}
 
 %fontos: előtte és utána is mérni 1-2 percig!!!
-Ebben feladatban a víz fajhőjét mértük ki, amit a következőképpen tettünk: a zöld termoszunkat (ezt használtuk melegvizes termosznak) megtöltöttük 0,77 L hideg vízzel, és a víz folyamatos melegítése mellett vizsgáltuk, hogy hogyan változik a hőmérésklet. A mérés kezdetén feljegyeztük a termoszban lévő fűtetlen víz hőméréskletét és tömegét. Ahhoz hogy a fűtőtestet megfelelő teljesítményen tudjuk üzemeltetni (50 W), meg kellett mérnünk az ellenállását. Ehhez a digitális multimétert ellenállás mérő üzemmódba kapcsoltuk, és megmértük a fűtőtest ellenállását ami 1,23 $\Omega$-nak adódott. a fűtőtestet a minélnagyobb biztonság érdekében  konstans áramgenerátorra kötöttük, és beállítottuk rajta a meglelelő áramot. AZ áramerősség 6,46 A, a feszültség pedig 7,95 V volt. Ilyen beállításokkal 10 percig folyamatosan úgy melegítettük a termoszban lévő vizet, hogy közben használtuk a mágneses keverőt az egyenletes elegyedés érdekében.
-A mért hőmérséklet adatokat ábrázoltuk egy grafikonon az idő függvényében, amelyre egyenest illesztettünk, és meghatároztuk a meredekségét. Ezekből megállapítottuk a víz fajhőjét, amihez a termosz becsült hőkapacitását használtuk fel. Így a víz fajhője $4532,52 \text{ J/(kg}^{\circ}\text{C)}$ adódott.
+Ebben a feladatban a víz fajhőjét határoztuk meg elektromos fűtéssel. A zöld termoszunkat megtöltöttük 0,77 liter hideg vízzel, majd a folyadék folyamatos belső hőleadása (elektromos fűtés) melletti melegedését vizsgáltuk. A mérés kezdetén feljegyeztük a termoszban lévő még fűtetlen víz tömegét és kezdőhőmérsékletét. Ahhoz, hogy a fűtőtestet a méréshez javasolt stabil 50 W-os hőteljesítményen tudjuk üzemeltetni, ismernünk kellett az ellenállását. A digitális multimétert ellenállásmérő módba kapcsolva az fűtőszál ellenállása $1,23\ \Omega$-nak adódott. A minél nagyobb biztonság, valamint a garantáltan stabil teljesítményleadás érdekében a fűtőtestet egy áramgenerátorra kötöttük, és finoman beállítottuk rajta a szükséges feszültséget. A leolvasott áramerősség végül 6,46 A, az ehhez tartozó feszültség pedig 7,95 V lett (melyből pontosan számítható a villamos teljesítmény). Ezen beállítások mellett pontosan 10 percig folyamatosan fűtöttük a vizet, közben mágneses keverőt alkalmazva a homogén hőmérséklet-eloszlás elérésére.
+
+A rögzített hőmérsékletadatokat ábrázoltuk az eltelt idő függvényében. Az így kapott monoton növő szakaszra egyenest illesztettünk (ez volt az ahol bekapcsoltuk a fűtést), amiből meghatároztuk a hőfoknövekedés meredekségét. Végül a termodinamikai energiamérleg felírásával megállapítottuk a víz fajhőjét, ehhez a termosz korábban becsült hőkapacitását is felhasználtuk. A számolás eredményeként a víz fajhőjére $4533 \text{ J/(kg}^{\circ}\text{C)}$ adódott. Ami megint nem tökéletes, de nincs olyan távol az irodalmi $4178 \text{ J/(kg}^{\circ}\text{C)}$ értéktől. A relatív hiba 8,5 $\%$, ami egy ilyen mérési beállításnál elfogadható. 
 
 \begin{comment}
 $V_{\text{víz}}=$0,77 L\\
@@ -79,12 +80,12 @@ Hibaszámítás: ..........
 
 \section*{6. Feladat: Termosz hőkapacitásának mérése keveréssel}
 
-Ebben a feladatban a meleg vizes termosz hőkapacitását mértük ki, olyan módon, hogy a hogy különböző hőmérsékletű folyadékokat öntöttünk össze. A megfelelő termoszokba beleöntöttük a meleg- illetve hideg vizet, és megmértük a víz tömegét. A hidegvizes termoszban $464 g$ vííz volt, a melegvizes termoszban pedig $467 g$ víz volt. Miután beállt a termoszokban a termikus egyensúly, megmértük a kezdeti hőmérsékletüket. Ezután a mágneses keverő folyamatos működtetése mellett beleöntöttük a hideg vizet a melegvizes termoszba, és közben folyamatosan mértük és feljegyeztük a hőmérséklet adatokat. Ezt követően a kapott adatokból grafikonokat készítettünk, és meghatároztuk a termosz hőkapacitását. Ehhez a következő összefüggést használtuk: \[
+Ebben a feladatban a melegvizes termosz hőkapacitását határoztuk meg kalorimetriás keveredési módszerrel (különböző hőmérsékletű víztömegeket megkeverve). A megfelelő termoszokba beleöntöttük a meleg, illetve a hideg vizet, majd precízen megmértük a tömegüket. A hidegvizes edényben 464 g, a melegvizesben pedig 467 g víz volt. Miután mindkét termoszban beállt a belső termikus egyensúly, leolvastuk a kezdeti hőmérsékleteket. Ezután -- a mágneses keverő folyamatos működtetése mellett -- óvatosan beleöntöttük a hideg vizet a melegvizes termoszba, mialatt a keverék hőmérsékletének változását is folyamatosan rögzítettük. Az így kapott mérési adatsorból grafikonokat készítettünk, meghatározva a termikus egyensúlyi értékeket. A termosz hőkapacitásának meghatározásához az alábbi összefüggést írtuk fel: \[
 m_{\text{meleg víz}} \cdot c_{\text{v}} \cdot (T'_{\text{meleg víz}} - T'_{\text{közös}}) + C_{\text{termosz}} \cdot (T'_{\text{meleg víz}} - T'_{\text{közös}}) = m_{\text{hideg víz}} \cdot c_{\text{v}} \cdot (T'_{\text{közös}} - T'_{\text{hideg víz}}).
 \]
- A számítások elvégzéséhez feltettük, hogy a rendszer teljesen zártnak tekinhető (nem ad le hőt a környezetének), illetve a víz irodalmi fajhőjét használtuk ($c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$) a számításokban (szobahőméréskleten). Ekkor a zöld termosz hőkapacitására $197,4 \text{ J/}^{\circ}\text{C}$ adódott.
+A számítások elvégzéséhez feltételeztük, hogy a keverési folyamat ideje alatt a rendszer hőszigetelt, teljesen zártnak tekinthető (vagyis a környezetbe hőáramlások elhanyagolhatók), miközben a víz fajhőjének (szobahőmérsékleti) 4178 J/(kg$^{\circ}$C) irodalmi értékét vettük alapul. Ezen feltételezésekkel a zöld termosz vizsgált hőkapacitása $197,4 \text{ J/}^{\circ}\text{C}$-ra adódott. Ami ugyan több mint 2-szer akkora mint a 4. feladatban becsült érték, de a mérés pontatlanságához képest elfogadható. Itt nagyon nagy szerepet játszott az, hogy a mérést hosszú ideig végeztük, és így a rendszer nem hőszigetelt.
 
- \begin{comment}
+\begin{comment}
 Ezek az első alkalom eredményei.\\
 $m_{hideg}=464$ g\\
 $m_{meleg}=467$ g\\
@@ -94,12 +95,11 @@ $T_{\text{egyensúlyi}}=125,0 \Omega$\\
 $c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$ \\  %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$\\
 Zöld termosz hőkapacitása keveréssel: $C_{termosz}=197.4$\\
- \end{comment}
+\end{comment}
 
-Mivel mi piros termoszt kaptunk a második mérési alkalommal, a mérést meg kellett ismételnünk annak ellenére, hogy egy egészen reális (a becsült hőkapacitástól nem irreális mértékben eltérő) eredményt kaptunk. Ellenben a második alkalommal már közel sem volt annyira jó az eredményünk, mint az első alkalommal. A mérést azért nem ismételtük meg újra, mert a laborvezetőtől azt az utasítást kaptuk, hogy ezt a mérést legfeljebb kétszer végezzük el, és az első alkalom mérésével együtt ez nekünk már a harmadik lett volna.
+Sajnos mivel a második laboratóriumi alkalommal a szokványos zöld helyett mi egy piros termoszt kaptunk (ami térfogatban is különbözött az eddigiektől), a kalorimetriás kalibrálást ismét meg kellett ejtenünk ezen a piros eszközön is.
 
-Második alkalommal ugyanazzal a mérési metódussal dolgoztunk, és $294 g$ hideg vizet és $406 g$ meleg vizet használtunk. A hideg víz hőmérséklete $22,3$ °C volt, a meleg víz hőmérséklete pedig $85,0$ °C volt. A keverés hatására a hőmérséklet $58,4$ °C-ra emelkedett. A víz fajhőjére megint az irodalmi adatot ahsznákltuk fel ($c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$). Ekkor a piros termosz hőkapacitására $23,6 \text{ J/}^{\circ}\text{C}$ adódott.
-
+A megismételt második alkalommal is teljesen ugyanezzel a metodikával dolgoztunk a piros termosznál, ekkor viszont 294 g hideg és 406 g meleg vizet öntöttünk egybe. A hideg víz kezdő hőmérséklete 22,3 $^{\circ}$C, míg a meleg vízé 85,0 $^{\circ}$C volt. A keveredés utáni egyensúly, 58,4 $^{\circ}$C értéken állt be. Viszont a fenti mérlegegyenlet visszaszámolásakor a piros termosz hőkapacitására csupán egy $23,6 \text{ J/}^{\circ}\text{C}$-os érték adódott, amely a valóságosnál vélhetőleg jóval kisebb, de legalább nem negatív. A mérést nem ismételtük meg harmadszor, a laborvezető instrukciója szerint.
 \begin{comment}
 Ezek a második alkalom eredményei.\\
 $m_{hideg}=294$ g\\
@@ -114,7 +114,6 @@ $c_{\text{víz}}= 4178 \text{ J/(kg}^{\circ}\text{C)}$ \\  %irodalmi adat
 $c_{\text{rozsdamentes acél}}=500 \text{ J/(kg}^{\circ}\text{C)}$\\
 Piros termosz hőkapacitása keveréssel: $C_{termosz}=23,6$ J/K\\
 \end{comment}
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{6_1_graf.pdf}
