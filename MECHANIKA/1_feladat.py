@@ -32,7 +32,7 @@ plt.plot(x, c + m*x, linestyle='-', color='r', label=f"Illesztett egyenes: y = {
 
 plt.title("1. feladat")
 plt.xlabel("Golyók száma")
-plt.ylabel("Szöbkitérés")
+plt.ylabel("Szögkitérés")
 plt.legend()
 plt.tight_layout()
 plt.savefig(os.path.join(script_dir, '1_feladat.png'))
