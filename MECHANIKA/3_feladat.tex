@@ -77,31 +77,12 @@
 
 Mérőpár mindkét tagja mérje meg a paramétereket!
 
-$R_{tárcs} = \text{m}$
-$d_{tárcsa} = \text{m}$
-$\rho_{alumínium} = 2700 \frac{kg}{m^3}$
-
-\begin{table}[H]
-    \centering
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|l|c|c|c|}
-        \hline
-        Mérőpár & $R_{tárcs}$ [m] & $d_{tárcsa}$ & $\Theta$ [kg m$^2$] \\ \hline
-        Luca & & & \\ \hline
-        Csongor & & & \\ \hline
-    \end{tabular}
-    \caption{Asztal tehetetlenségi nyomatékának meghatározása}
-    \label{tab:hotan_2}
-\end{table}
-
 
 \renewcommand{\thesubsection}{\alph{subsection})} % Changes 1.1 to a)
 \subsection{Számítással az asztal tömegének és sugarának ismeretében}
 
 Mérőpár mindkét tagja mérje meg a paramétereket!
 
-$R_{tárcs} = \text{m}$
-$d_{tárcsa} = \text{m}$
 $\rho_{alumínium} = 2700 \frac{kg}{m^3}$
 
 \begin{table}[H]
@@ -110,8 +91,8 @@ $\rho_{alumínium} = 2700 \frac{kg}{m^3}$
     \begin{tabular}{|l|c|c|c|}
         \hline
         Mérőpár & $R_{tárcs}$ [m] & $d_{tárcsa}$ & $\Theta$ [kg m$^2$] \\ \hline
-        Luca & & & \\ \hline
-        Csongor & & & \\ \hline
+        Luca& 0,13 & 0,004 & 2,23*10^{-3}& \\ \hline
+        Csongor& 0,13 & 0,004 & 2,23*10^{-3}& \\ \hline
     \end{tabular}
     \caption{Asztal tehetetlenségi nyomatékának meghatározása}
     \label{tab:hotan_2}
@@ -121,20 +102,41 @@ $\rho_{alumínium} = 2700 \frac{kg}{m^3}$
 \subsection{A rugó direkciós nyomatékának, a lengésidőnek és a csillapítási tényezőnek az ismeretében}
 
 \[
-\theta = \left( \frac{T}{2\pi} \right)^2 \cdot k^*
+\theta = \frac{k^*}{4\pi^2} \cdot T^2
 \]
 
+$\theta= 1,93*10^{-5} \text{kg m}^2$
 
 \subsection{Egy ismert tehetetlenségi nyomatékú tárcsa felhasználásával!}
 
-\[
-\theta = \theta_0 \frac{T^2}{T'^2 - T^2}.
-\]
+$m_{korong} = 51,42 \text{g}$
+$r_{korong} = 2,5 \text{cm}$
+$\theta_{korong} = 1,6*10^{-5} \text{kg m}^2$
+$m_{rézcsap} = 2,2 \text{g}$
 
-$m_{korong} = \text{kg}$
-$r_{korong} = \text{m}$
-$\theta_{korong} = \text{kg m}^2$
-$m_{rézcsap} = 2,2 \text{kg}$
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Szögkitérítés [°] & Idő [s] & Periódusidő [s] \\ \hline
+        90 & 13,02 & 1,30\\ \hline 
+        100 & 13,07 & 1,31\\ \hline
+        110 & 13,08 & 1,31\\ \hline 
+        120 & 13,11 & 1,31\\ \hline
+        130 & 12,96 & 1,30\\ \hline 
+        140 & 12,97 & 1,30\\ \hline
+        150 & 13,17 & 1,32\\ \hline
+        
+    \end{tabular}
+    \caption{Periódusidő a kezdeti szögkitérítéstől függően, ismert tehetetlenséginyomatékú koronggal}
+    \label{tab:periodusido}
+\end{table}
 
+Átlagolásból: $T' = 1,30 \pm 0,01 \text{s}$
+
+Ezekből: $\Theta_{asztal} = 5,1*10^{-4} \pm 0,03 \text{kg m}^2$
+
+Most ezt az eredményt úgy számoltuk ki, hogy a rézcsap tömegét nem számoltuk bele amikor kiszámoltuk a korong tehetetlenségi nyomatékát.
+Kis eltérést mutat az előző eredményekhez képest.
 
 \end{document}
