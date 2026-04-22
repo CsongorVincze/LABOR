@@ -1,0 +1,387 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{caption} % Required for \captionof
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{comment}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{framed}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{orange}{\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\title{Mechanikai mérés}
+\author{Kern Luca, Vincze Csongor}
+\date{2026 Április 22}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1. FELADAT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{1. Feladat: Határozza meg a spirálrugó $k^*$ direkciós nyomatékát!}
+
+Vízmérték segítségével az asztallapot vízszintesbe állítottuk.
+Asztal sorszáma: 4
+
+$r_{korong}= 6,5 cm$ \\
+$m_{edény}=4,6 g$ \\
+$\phi_{kezdeti}= 0^\circ$ \\
+$m_{golyó}=4,07 g$
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}        \hline
+        Golyók száma[db] & Szögelfordulás\_1 [°] & Szögelfordulás\_2 [°] \\ \hline
+         0 & 0 & \\ \hline 
+         1 & 42 & 45\\ \hline
+         2 & 65 & 60\\ \hline 
+         3 & 89 & 82\\ \hline
+         4 & 110 & 100\\ \hline 
+         5 & 139 & 122\\ \hline
+         6 & 157 & 141\\ \hline 
+         7 & 185 & 157\\ \hline
+         8 & 201 & 183\\ \hline
+    \end{tabular}
+    \caption{Szögelfordulás mértéke a csapágygolyók számától függően}
+    \label{tab:szogelfordulas}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{1_feladat.png}
+    \caption{Szögkitérés mértékének függése a golyók számától}
+    \label{fig:1_feladat_diagram}
+\end{figure}
+
+Ellenőrző számításként a direkciós erőt kiszámoltuk: $k^*=1,31 \cdot 10^{-4} \frac{kg m^2}{s^2}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2. FELADAT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{2. Feladat: Határozza meg a rendszer $\beta = \frac{\gamma}{2}$ csillapítási tényezőjét!}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Szögkitérítés [°] & Idő [s] & Periódusidő [s] \\ \hline
+        90 & 12,81 & 1,28\\ \hline 
+        100 & 13,06 & 1,30\\ \hline
+        110 & 12,85 & 1,29\\ \hline 
+        120 & 12,84 & 1,28\\ \hline
+        130 & 12,83 & 1,28\\ \hline 
+        140 & 12,81 & 1,28\\ \hline
+        150 & 12,79&  1,28\\ \hline 
+         &  & \\ \hline
+    \end{tabular}
+    \caption{Periódusidő a kezdeti szögkitérítéstől függően}
+    \label{tab:periodusido_2}
+\end{table}
+
+20 lengés után nézzük a maximális amplitúdót.
+$\phi_0 = 90^\circ$
+%videó!!!!!
+
+Átlagolásból: $T = 1,28 \pm 0,01 \text{s}$
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Mérések száma [db] & Maximális amplitúdó [°] \\ \hline
+         1 & 17 \\ \hline 
+         2 & 15 \\ \hline
+         3 & 17 \\ \hline 
+         4 & \\ \hline
+         5 & \\ \hline 
+         6 & \\ \hline
+         & \\ \hline 
+         & \\ \hline
+    \end{tabular}
+    \caption{Maximális amplitúdó}
+    \label{tab:max_amplitudo}
+\end{table}
+
+Átlagosan: 15,6 $\pm$ 1,1 ° \\
+Becsült csillapítási tényező: $3,4 \cdot 10^{-3} s^{-1}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3. FELADAT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{3. Feladat: Határozza meg a torziós asztal tehetetlenségi nyomatékát három különböző módon}
+
+Mérőpár mindkét tagja mérje meg a paramétereket!
+
+\renewcommand{\thesubsection}{\alph{subsection})} % Changes 1.1 to a)
+\subsection{Számítással az asztal tömegének és sugarának ismeretében}
+
+Mérőpár mindkét tagja mérje meg a paramétereket!
+
+$\rho_{alumínium} = 2700 \frac{kg}{m^3}$
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        Mérőpár & $R_{tárcs}$ [m] & $d_{tárcsa}$ & $\Theta$ [kg m$^2$] \\ \hline
+        Luca& 0,13 & 0,004 & $2,23 \cdot 10^{-3}$\\ \hline
+        Csongor& 0,13 & 0,004 & $2,23 \cdot 10^{-3}$\\ \hline
+    \end{tabular}
+    \caption{Asztal tehetetlenségi nyomatékának meghatározása}
+    \label{tab:hotan_2}
+\end{table}
+
+
+\subsection{A rugó direkciós nyomatékának, a lengésidőnek és a csillapítási tényezőnek az ismeretében}
+
+\[
+\theta = \frac{k^*}{4\pi^2} \cdot T^2
+\]
+
+$\theta= 1,93 \cdot 10^{-5} \text{kg m}^2$
+
+\subsection{Egy ismert tehetetlenségi nyomatékú tárcsa felhasználásával!}
+
+$m_{korong} = 51,42 \text{g}$ \\
+$r_{korong} = 2,5 \text{cm}$ \\
+$\theta_{korong} = 1,6 \cdot 10^{-5} \text{kg m}^2$ \\
+$m_{rézcsap} = 2,2 \text{g}$
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Szögkitérítés [°] & Idő [s] & Periódusidő [s] \\ \hline
+        90 & 13,02 & 1,30\\ \hline 
+        100 & 13,07 & 1,31\\ \hline
+        110 & 13,08 & 1,31\\ \hline 
+        120 & 13,11 & 1,31\\ \hline
+        130 & 12,96 & 1,30\\ \hline 
+        140 & 12,97 & 1,30\\ \hline
+        150 & 13,17 & 1,32\\ \hline
+    \end{tabular}
+    \caption{Periódusidő a kezdeti szögkitérítéstől függően, ismert tehetetlenséginyomatékú koronggal}
+    \label{tab:periodusido_3}
+\end{table}
+
+Átlagolásból: $T' = 1,30 \pm 0,01 \text{s}$
+
+Ezekből: $\Theta_{asztal} = 5,1 \cdot 10^{-4} \pm 0,03 \text{kg m}^2$
+
+Most ezt az eredményt úgy számoltuk ki, hogy a rézcsap tömegét nem számoltuk bele amikor kiszámoltuk a korong tehetetlenségi nyomatékát.
+Kis eltérést mutat az előző eredményekhez képest.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4. FELADAT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{4. Feladat: Igazolja a Steiner-tételt!}
+
+Steiner-tétel: $\theta' = \theta + mr^2.$
+
+$m_{piros csap}= 2,08 \text{kg}$ \\
+$r_{korong-középpont}= \text{m}$ \\
+$T_{lengési}= \text{s}$
+
+Első mérési pont: \\
+1. mérés: $r_{korong-középpont}= \text{m}$, $T_{lengési}= \text{s}$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{4_feladat.png}
+    \caption{T-r függés illesztése}
+    \label{fig:4}
+\end{figure}
+
+A direkciós állandóra $6,74 \cdot 10^{-3} \text{Nm}$ adódott.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5. FELADAT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{5. Feladat: Határozza meg egy inhomogén tömegeloszlású lemezből készült minta tehetetlenségi nyomatékát a súlypontján átmenő és a lemez síkjára merőleges tengelyre vonatkozóan!}
+
+\[
+T'^2_{\max} = \frac{4\pi^2}{k^*} \left[ \theta + \theta_x + m(r_0 + r_1)^2 \right],
+\]
+
+\[
+T'^2_{\min} = \frac{4\pi^2}{k^*} \left[ \theta + \theta_x + m(r_0 - r_1)^2 \right],
+\]
+
+%fotó, minta!!!!
+
+$m_{minta}= 0,387 \text{kg}$
+A mintát úgy rögzítjük a 30°-os jelölésnél, hogy a csúcsnál lévő szöfelezővel essen egyvonalba az osztás.
+
+$r_{1}= 5 \text{cm}$
+Azért ezt a lyukat választottuk, mert ezt van a középponttól legtávolabb.
+
+Hegyeszögnél lévő lyuknál rögzítettük:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
+         0 & 17,91 \\ \hline 
+         30 & 17,71 \\ \hline
+         60 & 16,99 \\ \hline 
+         90 & 15,93 \\ \hline
+         120 & 14,75 \\ \hline 
+         150 & 14,03 \\ \hline
+         180 & 13,66 \\ \hline
+         210 & 13,99 \\ \hline
+         240 & 14,60 \\ \hline
+         270 & 15,88 \\ \hline
+         300 & 16,77 \\ \hline
+         330 & 17,58\\ \hline
+        
+    \end{tabular}
+    \caption{Lengési idők az első lyukkal}
+    \label{tab:lengesiido_1.1}
+\end{table}
+
+szögnél lévő lyuknál rögzítettük:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
+         0 & 16,63 \\ \hline 
+         30 & 17,28 \\ \hline
+         60 & 14,91\\ \hline 
+         90 & 17,25 \\ \hline
+         120 & 16,60 \\ \hline 
+         150 & 15,59 \\ \hline
+         180 & 14,59 \\ \hline
+         210 & 14,06 \\ \hline
+         240 & 13,99 \\ \hline
+         270 & 14,18 \\ \hline
+         300 & 15,07 \\ \hline
+         330 & 15,93 \\ \hline
+        
+    \end{tabular}
+    \caption{Lengési idők a második lyukkal}
+    \label{tab:lengesiido_1.2}
+\end{table}
+
+$r_{2}= 2 \text{cm}$
+Azért ezta szöget választottuk, mert ez van a középponthoz legközelebb
+
+Hegyesszögnél lévő furatnál rögzítve:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
+         0 & 15,09 \\ \hline 
+         30 & 15,13 \\ \hline
+         60 & 14,59\\ \hline 
+         90 & 14,45\\ \hline
+         120 & 13,84 \\ \hline 
+         150 & 13,48 \\ \hline
+         180 & 13,44 \\ \hline
+         210 & 13,41 \\ \hline
+         240 & 13,81 \\ \hline
+         270 & 14,25 \\ \hline
+         300 & 14,73 \\ \hline
+         330 & 14,98 \\ \hline
+        
+    \end{tabular}
+    \caption{Lengési idők a második lyukkal}
+    \label{tab:lengesiido_2.1}
+\end{table}
+
+Tompaszögnél lévő luyknál rögzítve:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
+         0 & 14,47 \\ \hline 
+         30 & 14,84 \\ \hline
+         60 & 14,92 \\ \hline 
+         90 & 14,72 \\ \hline
+         120 & 14,33 \\ \hline 
+         150 & 14,05 \\ \hline
+         180 & 13,75 \\ \hline
+         210 & 13,40 \\ \hline
+         240 & 13,27 \\ \hline
+         270 & 13,45 \\ \hline
+         300 & 13,71 \\ \hline
+         330 & 14,11\\ \hline
+        
+    \end{tabular}
+    \caption{Lengési idők a második lyukkal}
+    \label{tab:lengesiido_2.2}
+\end{table}
+
+$r_{3}= 3 \text{cm}$
+
+Hegyesszögnél lévő furatnál rögzítve:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
+         0 & 15,89 \\ \hline 
+         30 & 15,62 \\ \hline
+         60 & 15,41 \\ \hline 
+         90 &  \\ \hline
+         120 &  \\ \hline 
+         150 &  \\ \hline
+         180 &  \\ \hline
+         210 &  \\ \hline
+         240 &  \\ \hline
+         270 &  \\ \hline
+         300 &  \\ \hline
+         330 &  \\ \hline
+        
+    \end{tabular}
+    \caption{Lengési idők a harmadik lyukkal}
+    \label{tab:lengesiido_3.1}
+\end{table}
+
+Tompaszögnél lévő lyuknál rögzítve:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
+         0 &  \\ \hline 
+         30 &  \\ \hline
+         60 &  \\ \hline 
+         90 &  \\ \hline
+         120 &  \\ \hline 
+         150 &  \\ \hline
+         180 &  \\ \hline
+         210 &  \\ \hline
+         240 &  \\ \hline
+         270 &  \\ \hline
+         300 &  \\ \hline
+         330 &  \\ \hline
+        
+    \end{tabular}
+    \caption{Lengési idők a harmadik lyukkal}
+    \label{tab:lengesiido_3.2}
+\end{table}
+
+A tehetetlenségi noymaték kiszámítására nem maradt időnk. Az időhiány miatt amúgy se maradt időnk az összes lehetséges rögzítési pontnál megmérni a lengési időket, de a középponthoz legközelebbi, és attól legtávolabbi pontban megmértük. Egy harmadik pontotban is elkezdtünk mérni, de nem maradt időnk befejezni.
+
+
+
+\end{document}
