@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Fájl elérésének beállítása
 script_dir = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(script_dir, '4_feladat.csv')
+filename = os.path.join(script_dir, '..', 'csv', '4_feladat.csv')
 
 try:
     # A fájl olvasása szóköz elválasztóval
@@ -42,7 +42,7 @@ plt.xlabel("Sugár négyzete, $r^2$ [m$^2$]")
 plt.ylabel("Periódusidő négyzete, $T^2$ [s$^2$]")
 plt.legend()
 plt.tight_layout()
-plt.savefig(os.path.join(script_dir, '4_feladat.png'))
+plt.savefig(os.path.join(script_dir, '..', 'images', '4_feladat.png'))
 plt.show()
 
 

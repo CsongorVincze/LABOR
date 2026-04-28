@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Get the absolute path to the directory containing this script
 script_dir = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(script_dir, '5_feladat.csv')
+filename = os.path.join(script_dir, '..', 'csv', '5_feladat.csv')
 
 try:
     df = pd.read_csv(filename, sep=r'\s+')
@@ -37,7 +37,7 @@ plt.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
 
 # Save the plot
-output_image = os.path.join(script_dir, '5_feladat.png')
+output_image = os.path.join(script_dir, '..', 'images', '5_feladat.png')
 plt.savefig(output_image)
 plt.show()
 

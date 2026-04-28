@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Get the absolute path to the directory containing this script
 script_dir = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(script_dir, '1_feladat.csv')
+filename = os.path.join(script_dir, '..', 'csv', '1_feladat.csv')
 
 try:
     # Read the file with space separator. Using names to handle missing values on the first row
@@ -35,7 +35,7 @@ plt.xlabel("Golyók száma")
 plt.ylabel("Szögkitérés")
 plt.legend()
 plt.tight_layout()
-plt.savefig(os.path.join(script_dir, '1_feladat.png'))
+plt.savefig(os.path.join(script_dir, '..', 'images', '1_feladat.png'))
 plt.show()
 
 print(f"A meredekség: {m:.5f}")
