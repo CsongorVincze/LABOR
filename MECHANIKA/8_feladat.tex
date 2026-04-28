@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{caption} % Required for \captionof
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{comment}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{framed}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{orange}{\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\title{Mechanikai mérés}
+\author{Kern Luca, Vincze Csongor}
+\date{2026 Április 22}
+
+\begin{document}
+
+\maketitle
+
+\section*{8. Feladat: Kényszerrezgés amplitúdójának és sebességamplitúdójának vizsgálata a kényszerítő frekvencia függvényében.}
+
+Kis csillapítás: 
+Csillaító mágneseket visszaaszereltük, a távolságuk:
+$d_{\text{mágnesek}} = \text{cm}$ %1,5-2 cm
+$m_{\text{teljes}} = 100 \text{g}$
+Impulzussorozat beállításai (1-es csatorna): 6400 Hz, 3 $\mu\text{s}$ , 3 $V_{\text{pp}}$
+2-es csatorna: 3 V, DC
+Kijelzőn: 5-10 impulzus látható
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Frekvencia [Hz] & Amplitúdó [mm] \\ \hline
+          0 & \\ \hline 
+          25 & \\ \hline
+          50 & \\ \hline 
+          75 & \\ \hline
+          100 & \\ \hline 
+          125 & \\ \hline
+        
+    \end{tabular}
+    \caption{Amplitúdó a frekvencia függvényében}
+    \label{tab:amplitudo}
+\end{table}
+
+Rezonanciafrekvencia: $f_{\text{rez}} = \text{Hz}$
+
+Nagy csillapítás:
+
+A mágnesek távolságát csökkentettük: $d_{\text{mágnesek}} = \text{cm}$
+Impulzussorozat beállításai (1-es csatorna): 6400 Hz, 3 $\mu\text{s}$ , 3 $V_{\text{pp}}$
+2-es csatorna: 3 V, DC
+Kijelzőn: 5-10 impulzus látható
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Frekvencia [Hz] & Amplitúdó [mm] \\ \hline
+          0 & \\ \hline 
+          25 & \\ \hline
+          50 & \\ \hline 
+          75 & \\ \hline
+          100 & \\ \hline 
+          125 & \\ \hline
+        
+    \end{tabular}
+    \caption{Amplitúdó a frekvencia függvényében}
+    \label{tab:amplitudo}
+\end{table}
+
+Rezonanciafrekvencia: $f_{\text{rez}} = \text{Hz}$
+
+\end{document}
