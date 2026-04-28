@@ -45,4 +45,9 @@ plt.tight_layout()
 plt.savefig(os.path.join(script_dir, '4_feladat.png'))
 plt.show()
 
-print(f"A meredekség: {m:.5f}")
+
+
+print(f"A meredekség: {m:.5f}, a tengelymetszet {c:.5f}")
+
+
+print(f"k csillag: {4*3.14*3.14*0.05142/m:.5f},  {0.05142*c/m-1.6*0.00001:.5f}")
