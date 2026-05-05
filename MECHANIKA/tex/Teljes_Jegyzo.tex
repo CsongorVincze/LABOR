@@ -23,24 +23,21 @@
 
 \maketitle
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 1. FELADAT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{1. Feladat: Határozza meg a spirálrugó $k^*$ direkciós nyomatékát!}
 
 Vízmérték segítségével az asztallapot vízszintesbe állítottuk.
-Asztal sorszáma: 4
+Asztal sorszámána: 4
 
-$r_{korong}= 6,5 cm$ \\
-$m_{edény}=4,6 g$ \\
-$\phi_{kezdeti}= 0^\circ$ \\
+$r_{korong}= 6,5 cm$
+$m_{edény}=4,6 g$
+$\phi_{kezdeti}= 0°$
 $m_{golyó}=4,07 g$
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|}        \hline
+    \begin{tabular}{|c|c|c|}       \hline
         Golyók száma[db] & Szögelfordulás\_1 [°] & Szögelfordulás\_2 [°] \\ \hline
-         0 & 0 & \\ \hline 
+         0 & 0 \\ \hline 
          1 & 42 & 45\\ \hline
          2 & 65 & 60\\ \hline 
          3 & 89 & 82\\ \hline
@@ -49,6 +46,7 @@ $m_{golyó}=4,07 g$
          6 & 157 & 141\\ \hline 
          7 & 185 & 157\\ \hline
          8 & 201 & 183\\ \hline
+        
     \end{tabular}
     \caption{Szögelfordulás mértéke a csapágygolyók számától függően}
     \label{tab:szogelfordulas}
@@ -63,10 +61,20 @@ $m_{golyó}=4,07 g$
 
 Ellenőrző számításként a direkciós erőt kiszámoltuk: $k^*=1,31 \cdot 10^{-4} \frac{kg m^2}{s^2}$
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 2. FELADAT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{2. Feladat: Határozza meg a rendszer $\beta = \frac{\gamma}{2}$ csillapítási tényezőjét!}
+Az eredmenyeinket tomeg fuggvenyeben is kirajzoltuk.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/1_feladat_mass.png}
+    \caption{Szögkitérés mértékének függése a tömegtől}
+    \label{fig:1_feladat_tomeg_diagram}
+\end{figure}
+
+Az egyenes Illesztesbol szamolt direkcios ero: $k^*=3.35 \cdot 10^{-3} \frac{kg m^2}{s^2}$
+
+\newpage
+
+\section*{2. Feladat: Határozza meg a rendszer csillapítási tényezőjét!}
 
 \begin{table}[H]
     \centering
@@ -80,17 +88,18 @@ Ellenőrző számításként a direkciós erőt kiszámoltuk: $k^*=1,31 \cdot 10
         130 & 12,83 & 1,28\\ \hline 
         140 & 12,81 & 1,28\\ \hline
         150 & 12,79&  1,28\\ \hline 
-         &  & \\ \hline
+
+        
     \end{tabular}
     \caption{Periódusidő a kezdeti szögkitérítéstől függően}
-    \label{tab:periodusido_2}
+    \label{tab:periodusido}
 \end{table}
+
+Átlagolásból: $T = 1,28 \pm 0,01 \text{s}$
 
 20 lengés után nézzük a maximális amplitúdót.
 $\phi_0 = 90^\circ$
 %videó!!!!!
-
-Átlagolásból: $T = 1,28 \pm 0,01 \text{s}$
 
 \begin{table}[H]
     \centering
@@ -100,25 +109,21 @@ $\phi_0 = 90^\circ$
          1 & 17 \\ \hline 
          2 & 15 \\ \hline
          3 & 17 \\ \hline 
-         4 & \\ \hline
-         5 & \\ \hline 
-         6 & \\ \hline
-         & \\ \hline 
-         & \\ \hline
+        
     \end{tabular}
     \caption{Maximális amplitúdó}
     \label{tab:max_amplitudo}
 \end{table}
 
-Átlagosan: 15,6 $\pm$ 1,1 ° \\
-Becsült csillapítási tényező: $3,4 \cdot 10^{-3} s^{-1}$
+Átlagosan: 15,6 $\pm$ 1,1 $\text{°}$
+Becsült csillapítási tényező: 0.068 $\frac{1}{s}$
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 3. FELADAT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
 \section*{3. Feladat: Határozza meg a torziós asztal tehetetlenségi nyomatékát három különböző módon}
 
 Mérőpár mindkét tagja mérje meg a paramétereket!
+
 
 \renewcommand{\thesubsection}{\alph{subsection})} % Changes 1.1 to a)
 \subsection{Számítással az asztal tömegének és sugarának ismeretében}
@@ -132,9 +137,9 @@ $\rho_{alumínium} = 2700 \frac{kg}{m^3}$
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{|l|c|c|c|}
         \hline
-        Mérőpár & $R_{tárcs}$ [m] & $d_{tárcsa}$ & $\Theta$ [kg m$^2$] \\ \hline
-        Luca& 0,13 & 0,004 & $2,23 \cdot 10^{-3}$\\ \hline
-        Csongor& 0,13 & 0,004 & $2,23 \cdot 10^{-3}$\\ \hline
+        Mérőpár & $D_{tárcs}$ [m] & $d_{tárcsa}$ & $\Theta$ [kg m$^2$] \\ \hline
+        Luca& 0,13 & 0,004 & $3.03 \cdot 10^{-4}$ \\ \hline
+        Csongor& 0,13 & 0,004 & $3.03 \cdot 10^{-4}$ \\ \hline
     \end{tabular}
     \caption{Asztal tehetetlenségi nyomatékának meghatározása}
     \label{tab:hotan_2}
@@ -144,10 +149,10 @@ $\rho_{alumínium} = 2700 \frac{kg}{m^3}$
 \subsection{A rugó direkciós nyomatékának, a lengésidőnek és a csillapítási tényezőnek az ismeretében}
 
 \[
-\theta = \frac{k^*}{4\pi^2} \cdot T^2
+\theta = \frac{k^{*}}{(\frac{2\pi}{T})^2 + \beta^2}
 \]
 
-$\theta= 1,93 \cdot 10^{-5} \text{kg m}^2$
+$\theta= 1,39 \cdot 10^{-4} \text{kg m}^2$
 
 \subsection{Egy ismert tehetetlenségi nyomatékú tárcsa felhasználásával!}
 
@@ -168,44 +173,46 @@ $m_{rézcsap} = 2,2 \text{g}$
         130 & 12,96 & 1,30\\ \hline 
         140 & 12,97 & 1,30\\ \hline
         150 & 13,17 & 1,32\\ \hline
+        
     \end{tabular}
     \caption{Periódusidő a kezdeti szögkitérítéstől függően, ismert tehetetlenséginyomatékú koronggal}
-    \label{tab:periodusido_3}
+    \label{tab:periodusido}
 \end{table}
 
 Átlagolásból: $T' = 1,30 \pm 0,01 \text{s}$
 
-Ezekből: $\Theta_{asztal} = 5,1 \cdot 10^{-4} \pm 0,03 \text{kg m}^2$
+Ezekből: $\Theta_{asztal} = 5,1*10^{-4} \pm 0,03 \text{kg m}^2$
 
 Most ezt az eredményt úgy számoltuk ki, hogy a rézcsap tömegét nem számoltuk bele amikor kiszámoltuk a korong tehetetlenségi nyomatékát.
 Kis eltérést mutat az előző eredményekhez képest.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 4. FELADAT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+A kapott tehetetlenségi nyomatékok viszonylag távol vannak egymástól, de egy nagyságrendbe esnek. Az a feladatban a hiba forrása lehet az általunk mért geometriai paraméterek hibája. Az alumínium sűrűségének irodalmitól való eltérése. A b feladatrész igen nagy hibával terhelt. Itt a direkciós nyomaték és a csillapítási tényező igen bizonytalan. Emellett természetesen a periódusidő mérésének is van valamennyi hibája, de ez vélhetően kisebb mint a többi paraméter hibája. A c feladatrészben ugyanazok a hibák lehetségesek mint az előbbi két módszer esetén.
+
+\newpage
+
 \section*{4. Feladat: Igazolja a Steiner-tételt!}
 
-Steiner-tétel: $\theta' = \theta + mr^2.$
 
-$m_{piros csap}= 2,08 \text{kg}$ \\
-$r_{korong-középpont}= \text{m}$ \\
-$T_{lengési}= \text{s}$
+\vspace{0.5em}
+\noindent
+\textbf{Mérési adatok és paraméterek:} \\
+$m_{\text{piros csap}} = 2,08 \text{ kg}$ \\[1ex]
 
-Első mérési pont: \\
-1. mérés: $r_{korong-középpont}= \text{m}$, $T_{lengési}= \text{s}$
+
+\vspace{1em}
+\noindent
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{4_feladat.png}
-    \caption{T-r függés illesztése}
+    \includegraphics[width=0.8\textwidth]{../images/4_feladat.png}
+    \caption{A mérési adatok és az illesztett egyenes a Steiner-tétel igazolásához}
     \label{fig:4}
 \end{figure}
 
-A direkciós állandóra $6,74 \cdot 10^{-3} \text{Nm}$ adódott.
+A direkciós állandóra $k^{*} = 6,74 \cdot 10^{-3} \text{ Nm}$ adódott. A tehetetlensegi nyomatekra pedig $ 2.8 \cdot 10^{-4} \text{kg m}^2$
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 5. FELADAT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
 \section*{5. Feladat: Határozza meg egy inhomogén tömegeloszlású lemezből készült minta tehetetlenségi nyomatékát a súlypontján átmenő és a lemez síkjára merőleges tengelyre vonatkozóan!}
 
@@ -246,11 +253,11 @@ Hegyeszögnél lévő lyuknál rögzítettük:
          330 & 17,58\\ \hline
         
     \end{tabular}
-    \caption{Lengési idők az első lyukkal}
+    \caption{Lengési idők az 5cm-nél lévő lyukkal, hegyesszög}
     \label{tab:lengesiido_1.1}
 \end{table}
 
-szögnél lévő lyuknál rögzítettük:
+Tompa szögnél lévő lyuknál rögzítettük:
 
 \begin{table}[H]
     \centering
@@ -259,7 +266,7 @@ szögnél lévő lyuknál rögzítettük:
         Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
          0 & 16,63 \\ \hline 
          30 & 17,28 \\ \hline
-         60 & 14,91\\ \hline 
+         60 & 17,91\\ \hline 
          90 & 17,25 \\ \hline
          120 & 16,60 \\ \hline 
          150 & 15,59 \\ \hline
@@ -271,7 +278,7 @@ szögnél lévő lyuknál rögzítettük:
          330 & 15,93 \\ \hline
         
     \end{tabular}
-    \caption{Lengési idők a második lyukkal}
+    \caption{Lengési idők az 5cm-nél lévő lyukkal, tompaszög}
     \label{tab:lengesiido_1.2}
 \end{table}
 
@@ -299,7 +306,7 @@ Hegyesszögnél lévő furatnál rögzítve:
          330 & 14,98 \\ \hline
         
     \end{tabular}
-    \caption{Lengési idők a második lyukkal}
+    \caption{Lengési idők az 2cm-nél lévő lyukkal, hegyesszög}
     \label{tab:lengesiido_2.1}
 \end{table}
 
@@ -324,7 +331,7 @@ Tompaszögnél lévő luyknál rögzítve:
          330 & 14,11\\ \hline
         
     \end{tabular}
-    \caption{Lengési idők a második lyukkal}
+    \caption{Lengési idők az 2cm-nél lévő lyukkal, tompaszög}
     \label{tab:lengesiido_2.2}
 \end{table}
 
@@ -340,15 +347,6 @@ Hegyesszögnél lévő furatnál rögzítve:
          0 & 15,89 \\ \hline 
          30 & 15,62 \\ \hline
          60 & 15,41 \\ \hline 
-         90 &  \\ \hline
-         120 &  \\ \hline 
-         150 &  \\ \hline
-         180 &  \\ \hline
-         210 &  \\ \hline
-         240 &  \\ \hline
-         270 &  \\ \hline
-         300 &  \\ \hline
-         330 &  \\ \hline
         
     \end{tabular}
     \caption{Lengési idők a harmadik lyukkal}
@@ -357,31 +355,184 @@ Hegyesszögnél lévő furatnál rögzítve:
 
 Tompaszögnél lévő lyuknál rögzítve:
 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/5_feladat.png}
+    \caption{Mérési adatok, az azonos mérésehez tartozóak halványan összekötve}
+    \label{fig:4}
+\end{figure}
+
+A tehetetlenségi noymaték kiszámítására nem maradt időnk. Az időhiány miatt amúgy se maradt időnk az összes lehetséges rögzítési pontnál megmérni a lengési időket, de a középponthoz legközelebbi, és attól legtávolabbi pontban megmértük. Egy harmadik pontotban is elkezdtünk mérni, de nem maradt időnk befejezni.
+
+\newpage
+
+\section*{6. Feladat: Határozza meg az eszközben található rugó k rugóállandóját!}
+
+A mágneses csillapítókat eltávolítottuk, és a rugó megnyúlását mértük meg a ráakasztott tömeg függvényében.
+Egy súly tömege: $m_{\text{súly}} = 25 \text{g} = 0,025 \text{kg}$
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Tömeg [g] & Megnyúlás [mm] & Rugóállandó [N/m]\\ \hline
+          0 & & \\ \hline 
+          25 & & \\ \hline
+          50 & & \\ \hline 
+          75 & & \\ \hline
+    \end{tabular}
+    \caption{Rugó megnyúlása a ráakasztott tömeg függvényében}
+    \label{tab:megnyulas}
+\end{table}
+
+Ezek alapján kiszámoltuk a rugóállandókat. $F = -D*x$
+A kapott rugóállandók átlaga: $D_{\text{rugó}} = \frac{m}{x} = \frac{0,001 \text{kg}}{0,001 \text{m}} = 1 \frac{\text{N}}{\text{m}}$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/6_feladat.png}
+    \caption{A rugóállandó meghatározásának mérési adatai és illesztett egyenese}
+    \label{fig:6_feladat}
+\end{figure}
+
+\newpage
+
+\section*{7. feladat: Határozza meg a rendszer $\omega_0$ saját körfrekvenciáját a csillapítatlan szabad rezgés periódusidejének mérésével!}
+
+A csillapító mágneseket továbbra sem szereltük vissza, az ultrahangos távolságmérőt rögzítettük. A rudat úgy rögzítettük, hogy a közepe kb a rudvezetőnél van, és a rúdvezetővel nem érintkezik. Rézlapot ragasztottunk a mérőrúd aljára, hogy növeljük a felületet a távolságméréshez.
+A rudat $x = \text{mm}$-rel kitérítettük, és megmértük a távolságot az időfüggvényében 5-10 perióduson keresztül.
+$m_{rúd} = 50 \text{g}$
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        Mérés száma & Kitérés [mm] & Idő [s] & $\omega_0$ [rad/s] \\ \hline
+        1 & & & \\ \hline
+        2 & & & \\ \hline
+        3 & & & \\ \hline
+    \end{tabular}
+    \caption{A rendszer saját körfrekvenciájának meghatározása}
+    \label{tab:mecha_7}
+\end{table}
+
+Ugyanezt megismétetltük $m = 50\text{g}$ tömeggel a rúdra helyezve.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        Tömeg [g] & Kitérés [mm] & Idő [s] & $\omega_0$ [rad/s] \\ \hline
+        50 & & & \\ \hline
+        100 & & & \\ \hline
+        150 & & & \\ \hline
+    \end{tabular}
+    \caption{A rendszer saját körfrekvenciájának meghatározása tömeggel}
+    \label{tab:mecha_7_2}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/7_feladat.png}
+    \caption{Szabad rezgés pozíció-idő grafikonjai a sajátfrekvencia meghatározásához}
+    \label{fig:7_feladat}
+\end{figure}
+
+\newpage
+
+\section*{8. Feladat: Kényszerrezgés amplitúdójának és sebességamplitúdójának vizsgálata a kényszerítő frekvencia függvényében.}
+
+Kis csillapítás: 
+Csillaító mágneseket visszaaszereltük, a távolságuk:
+$d_{\text{mágnesek}} = 2,0 \text{cm}$
+$m_{\text{teljes}} = 100 \text{g}$
+Impulzussorozat beállításai (1-es csatorna): 6400 Hz, 3 $\mu\text{s}$ , 3 $V_{\text{pp}}$
+2-es csatorna: 3 V, DC
+Kijelzőn: 5-10 impulzus látható
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
         \hline
-        Szögelfordulás [°] & 10 lengés lengési ideje [s] \\ \hline
-         0 &  \\ \hline 
-         30 &  \\ \hline
-         60 &  \\ \hline 
-         90 &  \\ \hline
-         120 &  \\ \hline 
-         150 &  \\ \hline
-         180 &  \\ \hline
-         210 &  \\ \hline
-         240 &  \\ \hline
-         270 &  \\ \hline
-         300 &  \\ \hline
-         330 &  \\ \hline
+        Frekvencia [Hz] & Amplitúdó [mm] \\ \hline
+          0 & \\ \hline 
+          25 & \\ \hline
+          50 & \\ \hline 
+          75 & \\ \hline
+          100 & \\ \hline 
+          125 & \\ \hline
         
     \end{tabular}
-    \caption{Lengési idők a harmadik lyukkal}
-    \label{tab:lengesiido_3.2}
+    \caption{Amplitúdó a frekvencia függvényében}
+    \label{tab:amplitudo}
 \end{table}
 
-A tehetetlenségi noymaték kiszámítására nem maradt időnk. Az időhiány miatt amúgy se maradt időnk az összes lehetséges rögzítési pontnál megmérni a lengési időket, de a középponthoz legközelebbi, és attól legtávolabbi pontban megmértük. Egy harmadik pontotban is elkezdtünk mérni, de nem maradt időnk befejezni.
+Rezonanciafrekvencia: $f_{\text{rez}} = \text{Hz}$
 
+Nagy csillapítás:
 
+A mágnesek távolságát csökkentettük: $d_{\text{mágnesek}} = \text{cm}$
+Impulzussorozat beállításai (1-es csatorna): 6400 Hz, 3 $\mu\text{s}$ , 3 $V_{\text{pp}}$
+2-es csatorna: 3 V, DC
+Kijelzőn: 5-10 impulzus látható
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Frekvencia [Hz] & Amplitúdó [mm] \\ \hline
+          0 & \\ \hline 
+          25 & \\ \hline
+          50 & \\ \hline 
+          75 & \\ \hline
+          100 & \\ \hline 
+          125 & \\ \hline
+        
+    \end{tabular}
+    \caption{Amplitúdó a frekvencia függvényében}
+    \label{tab:amplitudo}
+\end{table}
+
+Rezonanciafrekvencia: $f_{\text{rez}} = \text{Hz}$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/8_nemgerj.png}
+    \caption{Szabad rezgés pozíció-idő grafikonja}
+    \label{fig:8_nemgerj}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/8_feladat.png}
+    \caption{Rezonanciagörbék különböző csillapítások (mágnes távolságok) esetén}
+    \label{fig:8_feladat}
+\end{figure}
+
+\newpage
+
+\section{9. Feladat: Csillapítási tényező és jósági tényező meghatározása}
+
+\newpage
+
+\section{10. Feladat: Vizsgálja meg a lebegés jelenségét!}
+
+$d_{\text{mágnesek}_{\text{max}}} = \text{cm}$
+%mérőrúd!
+$A_{\text{max}} = \text{mm}$
+$f = \text{Hz}$    %f0-0,1Hz
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=4cm]{../images/10_feladat1.png}
+%     \caption*{Lebegés}
+%     \label{lebeges}
+% \end{figure}
+
+\newpage
 
 \end{document}
