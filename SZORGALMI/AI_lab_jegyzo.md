@@ -138,16 +138,20 @@ Annak erdekeben, hogy a kifolyasi sebesseget jobban tudjam vizsgalni igyekeztem 
 
 Keves vizet toltve a palackba meggyozodtem arrol, hogy a ragasztas visszafogja a vizet es nem szivarog a rendszerbol. A kalibraciot a kovetkezo keppen vegeztem: Mililiteres meroedennyel kimertem 1,3L vizet es ezt betoltottem a palackba, mikozben befogva tartottam a cso veget. Igy kezdetben a vizszint odaig ert ahol a palack nyaka elekzdett begorbulni. Ezutan rovid idore elengedtem a befogott csovet, es folyamatosan engedtem ki a vizet a palackbol az alatta talalhato meroedenybe. Amikor ujra befogtam a palack szalyat egy vonallal jeloltem a vizszintet a palackra ragasztott papirragaszton, es leolvastam a vizszintet a meroedenyen. Gyorsan visszaszamoltam a palackban levo viz terfogatat es a megfelelo jelolovonal melle felirtam. A kalibracio soran 10 meresi pontot vettem fel. A legmagasabb jelolovonal az 1,3L terfogatu vizhez tartozik. A legalso poziciot a szivoszal tetejenel vettem fel amikor mar csak csopogott a viz. Ezutan visszaszamoltam az aktualis magassagokhoz tartozo hidrosztatikai nyomast ugy, hogy a 0 szintet a szivoszal magassagahoz vettem fel.
 
-| Jelölés | $h$ / cm | $h$ / m | $\Delta p=\rho gh$ / Pa | $\delta h$ / mm | $\delta(\Delta p)$ / Pa | Megjegyzés |
+Az alabbi tablazat a felvett kalibracios pontokat tartalmazza a legalacsonyabb vizszinttol a legmagasabbig.
+
+| Jelölés | $V$  L | $h$  cm | $\Delta p=\rho gh$ / Pa | $\delta h$ / mm | $\delta(\Delta p)$ / Pa | Megjegyzés |
 |---:|---:|---:|---:|---:|---:|---|
-| 1 |  |  |  |  |  |  |
-| 2 |  |  |  |  |  |  |
-| 3 |  |  |  |  |  |  |
-| 4 |  |  |  |  |  |  |
-| 5 |  |  |  |  |  |  |
-| 6 |  |  |  |  |  |  |
-| 7 |  |  |  |  |  |  |
-| 8 |  |  |  |  |  |  |
+| 1 | 0,30 | 6,2 |  |  |  |  |
+| 2 | 0,40 | 8,0 |  |  |  |  |
+| 3 | 0,50 | 9,8 |  |  |  |  |
+| 4 | 0,60 | 11,6 |  |  |  |  |
+| 5 | 0,65 | 12,5 |  |  |  |  |
+| 6 | 0,80 | 14,9 |  |  |  |  |
+| 7 | 0,90 | 16,9 |  |  |  |  |
+| 8 | 1,05 | 19,6 |  |  |  |  |
+| 8 | 1,20 | 22.0 |  |  |  |  |
+| 8 | 1,30 | 24,0 |  |  |  |  |
 
 **3. ábra – Kalibrációs görbe, $\Delta p(h)$:**
 
