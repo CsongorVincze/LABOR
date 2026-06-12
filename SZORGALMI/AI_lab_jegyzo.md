@@ -153,11 +153,21 @@ Az alabbi tablazat a felvett kalibracios pontokat tartalmazza a legalacsonyabb v
 | 9 | 1,20 | 22,0 | 2158 | 1550 |
 | 10 | 1,30 | 24,0 | 2354 | 1746 |
 
-**3. ábra – Kalibrációs görbe, $\Delta p(h)$:**
+Ellenorzes keppen grafikonon abrazoltam a meresi a vizszint magassagat a kerfogat fuggvenyeben. Latszik, hogy szepen osszhangban van beletoltott vizterfogat a vizszint magassagaval, igy a kalibracio sikeresnek bizonyult.
 
-![Hidrosztatikai nyomás a vízoszlop-magasság függvényében](kepek/kalibracio.png)
+>Hibaforrasok: Termeszetesen a cso befogasakor keves vizveszteseg jelen van, es a leolvasasom sem volt tokeletes, ezek hibaforrasokat vezetnek be a kalibracioba
 
-[Add meg az illesztett egyenes egyenletét, meredekségét, bizonytalanságát és az illeszkedés minőségét. Vesd össze a meredekséget a $\rho g$ elméleti értékkel.]
+**3. ábra – A vízszint magassága a palackban lévő víz térfogatának függvényében:**
+
+![A vízszint magassága a víztérfogat függvényében](kepek/terfogat_magassag.png)
+
+A mérési pontokra illesztett egyenes:
+
+$$
+h=(17{,}68\ \mathrm{cm/L})V+0{,}93\ \mathrm{cm}.
+$$
+
+Az illeszkedés jósága $R^2=0{,}99974$, tehát a vizsgált tartományban a vízszint és a palackban lévő víz térfogata közel lineáris kapcsolatban áll.
 
 ---
 
