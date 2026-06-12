@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
+from scipy.optimize import curve_fit
 import os
 
 # Fájl elérési útjának beállítása
@@ -38,6 +39,32 @@ else:
 print(f"Mért átlagos periódusidő: {avg_period:.5f} s")
 print(f"Számított sajátfrekvencia: {eigenfrequency:.5f} Hz")
 
+if len(peaks) > 2:
+    t_peaks = time[peaks]
+    pos_peaks = pos[peaks]
+    t_shifted = t_peaks - t_peaks[0]
+    
+    def exp_decay(t, A0, beta, C):
+        return A0 * np.exp(-beta * t) + C
+        
+    C_guess = np.mean(pos) # Az egyensúlyi helyzet a jel átlaga környékén van
+    A0_guess = pos_peaks[0] - C_guess
+    beta_guess = 0.5
+    
+    try:
+        popt, pcov = curve_fit(exp_decay, t_shifted, pos_peaks, p0=[A0_guess, beta_guess, C_guess])
+        A0_fit, beta_fit, C_fit = popt
+        omega_0 = 2 * np.pi * eigenfrequency
+        Q_fit = omega_0 / (2 * beta_fit)
+        
+        print(f"Csillapítási tényező (beta): {beta_fit:.5f} 1/s")
+        print(f"Jósági tényező (Q): {Q_fit:.2f}")
+    except Exception as e:
+        print(f"Hiba a burkológörbe illesztésekor: {e}")
+        beta_fit = None
+else:
+    beta_fit = None
+
 # Globális betűméret beállítása
 plt.rcParams.update({'font.size': 18})
 
@@ -48,6 +75,11 @@ if len(peaks) > 1:
     plt.plot(time[peaks], pos[peaks], "rx", markersize=8, label=f"Csúcsok (f_saját = {eigenfrequency:.3f} Hz)")
 else:
     plt.plot(time[peaks], pos[peaks], "rx", markersize=8, label="Csúcsok")
+
+if 'beta_fit' in locals() and beta_fit is not None:
+    t_plot = np.linspace(min(time), max(time), 500)
+    env_plot = exp_decay(t_plot - t_peaks[0], A0_fit, beta_fit, C_fit)
+    plt.plot(t_plot, env_plot, 'g--', linewidth=2, label=fr"Burkológörbe ($\beta = {beta_fit:.3f}$, $Q = {Q_fit:.1f}$)")
 
 plt.title('8. feladat - Szabad rezgés vizsgálata')
 plt.xlabel('Idő [s]')

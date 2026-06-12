@@ -1,0 +1,335 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+
+% Core packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{tikz-cd}
+\usepackage{multicol}
+
+% Figures
+\newcommand{\safeincludegraphics}[2][]{%
+    \IfFileExists{#2}{%
+        \includegraphics[#1]{#2}%
+    }{%
+        \fbox{\parbox[c][0.18\textheight][c]{0.9\linewidth}{\centering Hiányzó ábra}}%
+    }%
+}
+
+% Paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1\baselineskip}
+\setlength{\emergencystretch}{2em}
+
+\title{Mérések Peltier-elemmel}
+\author{Kern Luca (BH74CH), Vincze Csongor (BG8SFC)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Kivonat}
+
+A mérési alkalmak során egy fontos termoelektromos elemmel, a Peltier-cellával, valamint a hozzá kapcsolódó hőtani és elektromos jelenségekkel ismerkedtünk meg. A laborgyakorlat kulcsfontosságú eleme egy Peltier-cella volt, amelyet alul és felül egy-egy alumíniumlap vett körül. Az alsó lapba vízhűtést, a felsőbe pedig elektromos fűtőszálat építettek. Ezzel a mérési elrendezéssel gyakorlati úton is megfigyelhettük a hővezetést, valamint a Seebeck- és a Peltier-effektust. A mérés kiértékelése során többek között ezeknek a jelenségeknek a mérési elrendezéshez tartozó paramétereit határoztuk meg. Emellett a Peltier-elemet termoelektromos generátorként és hőszivattyúként is alkalmaztuk.
+
+\section*{1. feladat. A mérési elrendezés összeállítása}
+
+A mérési elrendezés egy felső és egy alsó alumíniumlapból állt. Az alsó alumíniumlapon helyezkedett el a Peltier-elem és egy Pt1000 ellenállás-hőmérő, továbbá ide volt bevezetve a vízhűtés is. A felső lapon helyezkedett el a fűtőellenállás, illetve egy, az előzővel megegyező típusú hőmérő. Miután összeállítottuk a mérési elrendezést, és a laborvezető jóváhagyta azt, megnyitotta a hűtővíz csapját, így elkezdhettük a mérést.
+
+Megmértük a fűtőtest ellenállását egy Siglent digitális multiméterrel, amely $18,47 \,\Omega$-nak adódott. Ezt követően ellenőriztük a hőmérsékletmérést. A felső hőmérő ellenállását $(1,054 \pm 0,0005) \,\mathrm{k}\Omega$-nak mértük, ami $(14,03 \pm 0,1) \,^\circ\mathrm{C}$-nak felel meg. Az alsó hőmérő ellenállása $(1,048 \pm 0,0005) \,\mathrm{k}\Omega$ volt, ami $(12,47 \pm 0,1) \,^\circ\mathrm{C}$-nak felel meg. A hőmérsékleti adatokat a Pt1000 hőmérőkre megadott képlet alapján számoltuk. Ebben a mérésben, a leírásnak megfelelően, az offsetellenállás hibáját elhanyagolhatónak tekintettük, így nem mértük meg külön a kábelek és a csatlakozók ellenállását.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \safeincludegraphics[angle=-90,width=0.95\textwidth]{1_feladat_kepek/IMG_2031.jpg}
+        \caption{Mérési elrendezés}
+        \label{fig:meresi-elrendezes}
+    \end{minipage}\hfill
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \safeincludegraphics[angle=-90,width=0.95\textwidth]{1_feladat_kepek/IMG_2032.jpg}
+        \caption{Mérési elrendezés digitális multiméterekkel}
+        \label{fig:meresi-elrendezes-multimeterek}
+    \end{minipage}
+\end{figure}
+
+Mivel a mérés során elhanyagoltuk a kábelek és a csatlakozók ellenállása által okozott hibát, a hőmérsékletmérés hibája csak az ellenállás leolvasási hibájából származik. Ezért a hőmérsékletmérés abszolút hibája $\pm 0,1 \,^\circ\mathrm{C}$, relatív hibája pedig körülbelül $1\%$.
+
+\section*{2. feladat. A felső lap hőmérsékletének mérése}
+
+A felső lap hőmérsékletét mérő Siglent digitális multimétert csatlakoztattuk a számítógéphez, ahol az EasyDMM szoftver segítségével végeztük a mérést. Meggyőződtünk arról, hogy a szoftver megfelelően működik. Ezt az alábbi ábra illusztrálja.
+
+Az alsó lap hőmérsékletének mérésénél elegendő volt egyszerűbb módszert alkalmazni, mivel a mérések során az alsó lapot vízzel hűtöttük, ezért annak hőmérséklete közel állandó maradt. Így az alsó lap hőmérsékletét egy egyszerű kézi multiméterrel mértük, pusztán annak érdekében, hogy folyamatosan ellenőrizni tudjuk, nem jelennek-e meg kiugró hőmérsékleti értékek.
+
+\begin{figure}[H]
+    \centering
+    \safeincludegraphics[width=0.35\textwidth]{2_feladat_kepek/IMG_2033.jpg}
+    \caption{EasyDMM}
+    \label{fig:easydmm}
+\end{figure}
+
+\section*{3. feladat. A Seebeck-együttható és a Peltier-cella hővezetési tényezőjének mérése}
+
+Ebben a feladatban a Peltier-elemen nem vezettünk át áramot a tápegységből. Ehelyett azt a tulajdonságát használtuk fel, hogy ha a két oldalán különböző a hőmérséklet, akkor a cella kimenetei között feszültség jelenik meg. Ezt az üresjárási feszültséget mértük meg a másik Siglent digitális multiméterrel annak érdekében, hogy meghatározhassuk a Seebeck-együtthatót és a hővezetési tényezőt.
+
+A mérés alatt azt vizsgáltuk, hogy a cella kivezetései között mérhető üresjárási feszültség hogyan változik különböző fűtési teljesítmények esetén. Az ésszerű kiértékelés érdekében a fűtőtestre csatlakoztatott tápegység beállításait úgy választottuk meg, hogy az 5 V és 15 V közötti teljes mérési tartományban felvett öt mérési pont között a fűtési teljesítmény közel egyenletesen változzon. Először a feszültségtartomány két szélén megmértük a leadott teljesítményeket. 5 V-on a tápegység által leadott teljesítmény 1,3 W, 15 V-on pedig 12,1 W volt. Így a mérés során körülbelül 2,7 W-onként növeltük a teljesítményt, és ennek megfelelően választottuk meg a kiadott feszültségértékeket.
+
+Miután 5 V-on bekapcsoltuk a tápegységet, a mérés ideje alatt az alsó Pt1000 hőmérőn mért ellenállás értéke nem változott, végig $(1,048 \pm 0,0005) \,\mathrm{k}\Omega$ maradt. Ez $(12,47 \pm 0,1) \,^\circ\mathrm{C}$-nak felel meg. A felvett mérési pontok alapján a következő táblázatot készítettük el. A hőmérséklet nevű oszlop a felső hőmérő hőmérsékletét tartalmazza.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Feszültség (V) & Áram (A) & Teljesítmény (W) & Hőmérséklet ($^\circ$C) & $V_{\mathrm{Peltier}}$ (mV) \\
+        \hline
+        5 & 0,27 & 1,34 & 16,1 & 96,3 \\
+        \hline
+        8,7 & 0,47 & 4,05 & 20,2 & 267,8 \\
+        \hline
+        11,3 & 0,60 & 6,78 & 24,4 & 444,4 \\
+        \hline
+        13,3 & 0,70 & 9,34 & 28,2 & 611,0 \\
+        \hline
+        15,0 & 0,78 & 11,79 & 31,9 & 774,0 \\
+        \hline
+    \end{tabular}
+    \caption{3. feladat: a Peltier-cellán eső feszültség a fűtés függvényében}
+    \label{tab:meresi-adatok}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \safeincludegraphics[width=0.70\textwidth]{3_feladat_plot_extended.png}
+    \caption{Feszültség és fűtési teljesítmény}
+    \label{fig:feszultseg-futesi-teljesitmeny}
+\end{figure}
+
+Mért adatainkat egy-egy grafikonon ábrázoltuk. Az első grafikonon a fűtőteljesítményt jelenítettük meg az alsó és a felső lap közötti hőmérséklet-különbség függvényében. Ennek meredekségéből a hővezetési együttható határozható meg, ami $\Lambda = (0,673 \pm 0,002) \,\mathrm{W/K}$-nek adódott. A második grafikon a Seebeck-feszültséget ábrázolja a hőmérséklet-különbség függvényében, amelynek meredekségéből a Seebeck-együttható határozható meg. Ez $S = (43,67 \pm 0,31) \,\mathrm{mV/K}$-nek adódott.
+
+Az eredményeink hibája a hőmérsékletmérés hibájából és az egyenesillesztés pontatlanságából ered. Így a hővezetési együttható relatív hibája körülbelül $0,3\%$-nak, a Seebeck-együttható relatív hibája pedig körülbelül $0,7\%$-nak adódott.
+
+Mivel az eredményeinket a laborvezető jóváhagyta, elkezdhettünk foglalkozni a következő feladattal.
+
+\section*{4. feladat. A Peltier-cella belső ellenállásának mérése}
+
+Az előző feladat alapján a $T_{\text{1}}$ hőmérsékletet a maximálisan elért hőmérsékleten hagytuk, ami 31,9 $^\circ$C volt. Így megmértük az üresjárási feszültséget: $V_{\text{Seebeck}} = 777 \,\mathrm{mV}$. Az ellenállásdekád kimeneteit bekötöttük az egyik Siglent multiméterbe, hogy az ellenállást pontosan tudjuk beállítani. Azt tapasztaltuk, hogy a dekádon beállított $0,7 \,\Omega$ terhelőellenállás megmérve körülbelül $1 \,\Omega$-nak felel meg; pontosan $1,03 \,\Omega$ volt. A dekád ezen beállításával ötször megmértük a Peltier-feszültséget.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|}
+        \hline
+        Peltier-feszültség (V) \\
+        \hline
+        $0,28 \pm 0,02$ \\
+        \hline
+        $0,28 \pm 0,02$ \\
+        \hline
+        $0,29 \pm 0,02$ \\
+        \hline
+        $0,28 \pm 0,02$ \\
+        \hline
+        $0,32 \pm 0,02$ \\
+        \hline
+    \end{tabular}
+    \caption{A Peltier-cella belső ellenállásának meghatározásához mért feszültségek}
+    \label{tab:4-meresi-adatok}
+\end{table}
+
+Mivel az áram a teljes körben azonos volt, egyszerű egyenletrendezéssel a belső ellenállásra a következő összefüggést kaptuk:
+
+$$
+R_b = R_t\left(\frac{V_s}{V_p} - 1\right).
+$$
+
+Igyekeztünk gyorsan leolvasni a feszültségértékeket; ez viszonylag jól sikerült, az értékek kis szórást mutatnak. A multiméter által mutatott érték azonban gyorsan változott, így ez jelentette a mérés első hibaforrását, amelyet $\pm 0,02 \,\mathrm{V}$-nak becsültünk. A másik hibaforrás a számítás során jelent meg, és az öt ismételt feszültségmérés átlagtól való eltéréséből származott. Egyszerű hibabecslést végezve a mért értékeket átlagoltuk, majd az átlagtól mért legnagyobb eltérést növeltük a bevezetett leolvasási hibával. Így a mért feszültségek átlaga $(0,29 \pm 0,04) \,\mathrm{V}$ lett. A Seebeck-feszültség hibáját $\pm 0,05 \,\mathrm{mV}$-nak becsültük. Az átlagolásból számolt belső ellenállás $(1,73 \pm 0,65) \,\Omega$-nak adódott. A hibabecslés során viszonylag nagy bizonytalanságot vettünk figyelembe, ezért a hiba is látványosan nagyobb lett, de végeredményben reális értékeket kaptunk. A relatív hiba $38\%$-nak adódott. Itt csak egyszerű hibabecslést végeztünk a szélsőséges értékek felhasználásával.
+
+A kapott belsőellenállás-értéket reálisnak tartottuk, és a laborvezető is jóváhagyta, így rátérhettünk a következő feladatra.
+
+\section*{5. feladat. A Peltier-cella jósági tényezőjének becslése}
+
+Egy termoelektromos rendszer jósági tényezője, amelynek hideg oldala $T_0$ hőmérsékletű, a következőképpen számolható:
+
+$$
+ZT_0 = \frac{S^2}{\Lambda R_b}T_0.
+$$
+
+A számításhoz felhasznált értékek:
+\begin{center}
+\fbox{
+\begin{minipage}{0.62\textwidth}
+\[
+\begin{aligned}
+    T_0 &= (13,25 \pm 0,10) \,^\circ\mathrm{C} = (286,25 \pm 0,10) \,\mathrm{K}, \\
+    S &= (43,67 \pm 0,31) \,\mathrm{mV/K}, \\
+    \Lambda &= (0,673 \pm 0,002) \,\mathrm{W/K}, \\
+    R_b &= (1,73 \pm 0,65) \,\Omega.
+\end{aligned}
+\]
+
+Ezek alapján a Peltier-cella jósági tényezője:
+\[
+ZT_0 = \frac{S^2}{\Lambda R_b}T_0 = 0,47 \pm 0,18.
+\]
+\end{minipage}
+}
+\end{center}
+
+A Gauss-féle hibaszámításból kapott abszolút bizonytalanságot relatív bizonytalanságra átváltva $38\%$-os értéket kapunk. Ez nagyrészt a belső ellenállás bizonytalanságával hozható összefüggésbe.
+
+\begin{center}
+\colorbox{gray!10}{%
+\begin{minipage}{0.92\textwidth}
+\noindent\textcolor{gray!70}{\vrule width 3pt}\hspace{0.8em}%
+\begin{minipage}{0.88\textwidth}
+\textbf{Megjegyzés.} Itt megjegyezzük, hogy a későbbi beállításokban 0,45-nek vettük a jósági tényezőt. Ez a hiba abból adódott, hogy a laborgyakorlat alatt rosszul kerekítettünk. Szerencsére az eltérés csekély; ezt a számítást utólag kijavítottuk.
+\end{minipage}
+\end{minipage}%
+}
+\end{center}
+
+\section*{6. feladat}
+
+A laborgyakorlat ezen feladata során a Peltier-cellát termoelektromos generátorként működtettük. A felső alumíniumlemezben található fűtőszálat nagy teljesítménnyel hajtottuk meg, ezzel jelentősen fűtve a Peltier-cella felső oldalát. A cella alsó oldalát változatlanul vízzel hűtöttük. A cella kivezetéseire egy terhelőellenállást kapcsoltunk, amelynek értéke közel volt a belső ellenállás értékéhez. Erre azért volt szükség, mert elméletileg levezethető, hogy adott feltételek mellett a kimeneti teljesítményt olyan terhelőellenállás maximalizálja, amelynek értéke megegyezik a belső ellenállással. Bekapcsoltuk a fűtést, és megvártuk a hőmérsékleti egyensúly beállását.
+
+A Siglent multiméterrel mértük az ellenállásdekád ellenállását, és úgy állítottuk be, hogy a belső ellenálláshoz közeli értéket vegyen fel. Ez 1,77 $\Omega$ lett, ami az ellenállásdekádon 1,5 $\Omega$-os beállításnak felel meg.
+
+A tápegység teljesítménye 15 V-os meghajtófeszültség mellett 11,8 W volt; ezt vettük bemenő teljesítménynek. Az egyensúly beállta után a $V_{\text{Peltier}}$ 0,320 V-nak adódott. A meleg tartály hőmérséklete az egyensúly beállta után 301,5 K, a hideg tartály hőmérséklete pedig ugyanannyi volt, mint az előző feladatban: 286,25 K.
+
+Ebből meghatározhatjuk a kimenő elektromos teljesítményt:
+
+$$
+P_{\text{ki}}^{\text{elektromos}} = \frac{(0,32 \pm 0,02)^2}{1,77 \pm 0,10} = (0,06 \pm 0,01) \,\mathrm{W}.
+$$
+
+$$
+\eta = \frac{P_{\text{ki}}^{\text{elektromos}}}{P_{\text{be}}^{\text{fűtő}}} = (0,004 \pm 0,001) = (0,4 \pm 0,1)\%.
+$$
+
+Mivel a belső ellenállás jó közelítéssel megegyezik a terhelőellenállással, más módon is kiszámíthatjuk a hatásfokot. Ebben az esetben a hatásfok elméleti kiszámítására az alábbi képletet használtuk:
+$$
+\eta_{\text{elméleti}} = \frac{T_1 - T_0}{T_0} \frac{ZT_0}{4 + \left(\frac{1}{2} + \frac{3}{2} \frac{T_1}{T_0}\right) ZT_0} = 0,005.
+$$
+
+A mért és az elméleti módszerrel számított értékek összhangban vannak; az elméleti érték a mért érték hibahatárának szélén található. Látható, hogy a Peltier-elem termoelektromos generátorként való használata nagyon kis hatásfokkal jár, ezért nem kifejezetten gazdaságos.
+
+\section*{7. feladat. A Peltier-effektus hűtési folyamatának megfigyelése}
+
+Az előző feladatokban az elemet termoelektromos fűtőként használtuk, most viszont termoelektromos hűtőként alkalmaztuk. A mérés célja az volt, hogy megfigyeljük a hűtőhatást abban az esetben, ha az elemen $0,5 \,\mathrm{A}$ áramot vezetünk át. Amikor beállítottuk a tápegység paramétereit, konstans áramgenerátorként használtuk azt, ezért az eszközök védelme érdekében beállítottuk a $15 \,\mathrm{V}$-os feszültségkorlátot. A fűtőellenállást kikapcsoltuk, az alsó lap vízhűtését viszont továbbra is meghagytuk, így az alsó lap hőmérséklete állandó volt. $(1,068 \pm 0,001) \,\mathrm{k}\Omega$ ellenállást mértünk az alsó lapon, ami $(17,66 \pm 0,26) \,^\circ\mathrm{C}$-nak felel meg, vagyis $(290,66 \pm 0,26) \,\mathrm{K}$.
+
+A mérési leírásnak megfelelően az elemre $0,5 \,\mathrm{A}$ áramot kapcsoltunk, így a Peltier-feszültség $1,15 \,\mathrm{V}$, az elektromos teljesítmény pedig $0,58 \,\mathrm{W}$ volt.
+
+Annak érdekében, hogy a hűtőhatást pontosan vizsgálhassuk, megvártuk az egyensúlyi hőmérséklet beállását, és csak ezután olvastuk le az elem két oldalán a hőmérsékletet. Az egyensúly kialakulása után a felső lap ellenállása $(1,030 \pm 0,001) \,\mathrm{k}\Omega$ volt, ami $(7,79 \pm 0,26) \,^\circ\mathrm{C} = (280,79 \pm 0,26) \,\mathrm{K}$-nek felel meg. Így a $T_{1}-T_{0}$ hőmérséklet-különbség $\Delta T = (-9,87 \pm 0,37) \,\mathrm{K}$ volt, ami reális, hiszen a hűlési görbét leolvasva is hasonló eredményt kapunk.
+
+\begin{figure}[H]
+    \centering
+    \safeincludegraphics[width=0.70\textwidth]{7_feladat_plot.png}
+    \caption{Hűlési görbe}
+    \label{fig:hulesi-gorbe}
+\end{figure}
+
+A hőmérséklet-különbség hibája az ellenállások leolvasási hibájából származik. Érdemes azonban megemlíteni, hogy az alsó és a felső lap ellenállás-hőmérőjét nem ugyanazzal a műszerrel mértük: a felső lapét egy Siglent digitális multiméterrel, az alsó lapét pedig egy kézi multiméterrel. Ezek pontossága eltérhet, de mivel erre nincs adatunk, és várhatóan kicsi a hatása, ezt most elhanyagoltuk. Amennyiben csak a leolvasás hibáját tekintjük relevánsnak, akkor a hőmérséklet-különbség hibája körülbelül $3,8\%$.
+
+Az eredményünket a laborvezető ezúttal is jóváhagyta, így haladhattunk tovább.
+
+\section*{8. feladat. A Peltier-együttható mérése}
+
+Ebben a feladatban felhasználhattuk az előző mérés eredményeit, mivel a Peltier-elem szempontjából az előző feladat beállításairól indítottuk a mérést. Ekkor azonban visszakapcsoltuk a fűtőellenállást is, amelynek feszültségét négy lépésben állítottuk 5 V és 15 V között, ugyanúgy, mint a 3. feladatban, tehát úgy, hogy a fűtőellenállás által leadott teljesítmény egyenletesen növekedjen. Minden beállításnál megmértük a hőmérséklet-különbséget és a Peltier-feszültséget is, miután a felső lapon beállt az egyensúlyi hőmérséklet.
+
+\begin{table}[h]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Alsó lap hőm. ($^\circ$C) & Felső lap hőm. ($^\circ$C) & Hőm.-kül. ($^\circ$C) & Peltier-fesz. (V) & Teljesítmény (W) \\
+        \hline
+        17,66 & 7,79 & -9,87 & 1,15 & 0 \\
+        \hline
+        15,84 & 14,55 & -1,29 & 0,92 & 4,3 \\
+        \hline
+        16,36 & 20 & 3,64 & 0,71 & 8,02 \\
+        \hline
+        16,88 & 25,97 & 9,09 & 0,50 & 11,82 \\
+        \hline\hline
+        16,36 & 17,14 & 0,78 & 0,84 & 5,82 \\
+        \hline
+    \end{tabular}
+    \caption{Hőmérséklet-különbség a fűtési teljesítmény függvényében}
+    \label{tab:8-meresi-adatok}
+\end{table}
+
+A mért hőmérséklet-különbség--fűtőteljesítmény adatokat grafikonon ábrázoltuk, majd arra egyenest illesztve meghatároztuk azt a teljesítményt, amelynél $\Delta T = 0 \,^\circ\mathrm{C}$ lenne. Ez $5,79 \,\mathrm{W}$-nak adódott, ezért úgy állítottuk be a fűtőellenállás tápegységét, hogy $5,82 \,\mathrm{W}$ teljesítményt adjon le. Az ehhez tartozó mérési eredményeink a táblázat utolsó sorában láthatók. Ezzel a mérési beállítással a Peltier-együtthatót $\Pi = (11,56 \pm 0,03) \,\mathrm{V}$-nak mértük. A Seebeck-együtthatóból számolt Peltier-együttható $(12,66 \pm 0,09) \,\mathrm{V}$-nak adódott, ami körülbelül $8,1\%$-os eltérést jelent a két adat között.
+
+\begin{figure}[H]
+    \centering
+    \safeincludegraphics[width=0.70\textwidth]{8_feladat_plot.png}
+    \caption{Hőmérséklet-különbség a fűtési teljesítmény függvényében}
+    \label{fig:homersekletkulonbseg-futesi-teljesitmeny}
+\end{figure}
+
+Figyelembe véve az ellenállások leolvasási hibáját, amelyet $\pm 0,001 \,\mathrm{k}\Omega$-nak becsültünk, az egyenesillesztés feszültségbizonytalanságot okoz, amit $\pm 0,02 \,\mathrm{V}$-nak becsültünk. Így a mért Peltier-együtthatóra körülbelül $0,3\%$-os relatív hiba adódott.
+
+Miután a laborvezető jóváhagyta az eredményünket, a mérési beállításokat meghagyva áttértünk a következő feladatra.
+
+\section*{9. feladat. A belső ellenállás meghatározása nulla hőmérséklet-különbségnél}
+
+Ha a hőmérséklet-különbség $\Delta T = 0 \,^\circ\mathrm{C}$ közelében van, akkor a belső ellenállás meghatározható a Peltier-elemben folyó áram és a cella kimenetei között mérhető feszültség ismeretében. Mivel az előző feladat beállításain nem változtattunk, hogy a $\Delta T = 0 \,^\circ\mathrm{C}$ hőmérséklet-különbség közelében maradjunk, $I_\text{Peltier} = 0,5 \,\mathrm{A}$ maradt, illetve a $V_\text{Peltier} = (0,84 \pm 0,02) \,\mathrm{V}$ sem változott.
+
+$$
+R_\text{belső} = \frac{V_\text{Peltier}}{I_\text{Peltier}}.
+$$
+
+Ezek alapján a Peltier-elem belső ellenállása $R_\text{belső} = (1,68 \pm 0,04) \,\Omega$-nak adódott. Ez Gauss-féle hibaterjedéssel $2,4\%$ relatív hibának felel meg. Ezzel szemben a 4. feladat alapján a belső ellenállás $r_\text{belső} = (1,73 \pm 0,65) \,\Omega$-nak adódott. Ez $2,9\%$-os relatív eltérést jelent a korábbi eredménytől, ami jó egyezésnek tekinthető.
+
+\section*{10. feladat. A Peltier-hűtő teljesítménytényezőjének meghatározása}
+
+Kiszámítottuk azt a Peltier-áramot, amelyet a laborvezető jóváhagyott, és amellyel az elemet meghajtva a legjobb teljesítménytényezőt kapjuk. Ez $\Delta T = 0 \,^\circ\mathrm{C}$ esetén $I_\text{Peltier} = 3,3 \,\mathrm{A}$-nek adódott. A Peltier-cella két oldala kezdetben $18,96 \,^\circ\mathrm{C}$ volt az alsó lapon és $-0,47 \,^\circ\mathrm{C}$ a felső lapon. Miután beállítottuk a kiszámolt Peltier-áramot, úgy állítottuk be a fűtőellenállás tápfeszültségét, hogy az adott fűtőteljesítménnyel elérjük a kívánt, $0 \,^\circ\mathrm{C}$ körüli hőmérséklet-különbséget. Ehhez több lépésben is finomhangolni kellett a beállításokat, és meg kellett várni az egyensúlyi hőmérséklet beállását. Itt csak a végső beállításokat közöljük: $13,08 \,\mathrm{V}$ feszültség, $0,58 \,\mathrm{A}$ áramerősség és $9,07 \,\mathrm{W}$ fűtőteljesítmény.
+
+Az előzetes számítások alapján $0 \,^\circ\mathrm{C}$ hőmérséklet-különbség esetén, a megfelelő Peltier-áramot beállítva, 1,59 adódik a teljesítménytényezőre. Ezzel szemben a mérési adataink alapján 1,19-et kaptunk. Ezek egymáshoz viszonyított relatív eltérése körülbelül $29\%$, ami jelentős, de a beállítás érzékenysége és a hőveszteségek miatt értelmezhető eredmény.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centering
+        \safeincludegraphics[width=0.95\textwidth]{10_feladat_1.jpg}
+        \caption{Multiméterek}
+        \label{fig:multimeterek}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+        \centering
+        \safeincludegraphics[width=0.95\textwidth]{10_feladat_2.jpg}
+        \caption{Tápegység és fűtőtest}
+        \label{fig:tapegyseg-futotest}
+    \end{minipage}
+\end{figure}
+
+\section*{11. feladat. A Peltier-hűtő minimális hőmérsékletének elérése}
+
+A mérés során elért legalacsonyabb hőmérséklet $T_{0} = -25,77 \,^\circ\mathrm{C}$ volt.
+
+Mivel az átszivattyúzott hő nulla, a minimális hőmérséklet eléréséhez szükséges áram képlete a következő alakra egyszerűsödik:
+
+$$
+I_{\text{min}T_1} = \frac{\Lambda}{S} \left( \sqrt{2ZT_0 + 1} - 1 \right).
+$$
+
+A korábbi feladatokban kapott eredményeket behelyettesítve $I_{\text{min}T_1} = 6,04 \,\mathrm{A}$ adódik. Elméletileg tehát ezzel az árammal lehet a leghatékonyabban lehűteni a Peltier-cellát. Ezután kiszámítottuk a legalacsonyabb hőmérsékletet:
+
+$$
+T_{1,\text{min}} = T_0 - T_0 \frac{1 + ZT_0 - \sqrt{2ZT_0 + 1}}{ZT_0}.
+$$
+
+Ez körülbelül $239,4 \,\mathrm{K}$-nek, vagyis $-33,6 \,^\circ\mathrm{C}$-nak adódik.
+
+Az áramot finomhangolva $5,89 \,\mathrm{A}$-re állítottuk be, amellyel sikerült $-25,77 \,^\circ\mathrm{C}$-ra lehűteni a Peltier-elemet. Ez viszonylag közel van az elméleti minimumhoz, különösen ha figyelembe vesszük, hogy a valóságban a környezetből is érkezik hő a rendszerbe, ami melegíti a Peltier-elemet.
+
+\section*{Összefoglalás}
+
+A mérési sorozat során a gyakorlatban is megfigyelhettük a Peltier-elem összetett működését, és külön-külön vizsgálhattuk a benne zajló hatásokat. Több fontos termoelektromos paramétert is meghatároztunk, általában jó eredményekkel. Ezek közé tartozott a Peltier- és a Seebeck-együttható, valamint a jósági tényező is. Azt is megfigyelhettük, hogyan halmozódnak a hibák akkor, amikor egyre összetettebb, több részeredményt felhasználó méréseket végzünk.
+
+\end{document}
