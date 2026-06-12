@@ -140,18 +140,18 @@ Keves vizet toltve a palackba meggyozodtem arrol, hogy a ragasztas visszafogja a
 
 Az alabbi tablazat a felvett kalibracios pontokat tartalmazza a legalacsonyabb vizszinttol a legmagasabbig.
 
-| Jelölés | $V$  L | $h$  cm | $\Delta p=\rho gh$ / Pa | $\delta h$ / mm | $\delta(\Delta p)$ / Pa | Megjegyzés |
-|---:|---:|---:|---:|---:|---:|---|
-| 1 | 0,30 | 6,2 |  |  |  |  |
-| 2 | 0,40 | 8,0 |  |  |  |  |
-| 3 | 0,50 | 9,8 |  |  |  |  |
-| 4 | 0,60 | 11,6 |  |  |  |  |
-| 5 | 0,65 | 12,5 |  |  |  |  |
-| 6 | 0,80 | 14,9 |  |  |  |  |
-| 7 | 0,90 | 16,9 |  |  |  |  |
-| 8 | 1,05 | 19,6 |  |  |  |  |
-| 8 | 1,20 | 22.0 |  |  |  |  |
-| 8 | 1,30 | 24,0 |  |  |  |  |
+| Jelölés | $V$ / (L) | $h$ / (cm) | $p=\rho gh$  (Pa) | $\Delta p=p-p_1$  (Pa) |
+|---:|---:|---:|---:|---:|
+| 1 | 0,30 | 6,2 | 608 | 0 |
+| 2 | 0,40 | 8,0 | 785 | 177 |
+| 3 | 0,50 | 9,8 | 961 | 353 |
+| 4 | 0,60 | 11,6 | 1138 | 530 |
+| 5 | 0,65 | 12,5 | 1226 | 618 |
+| 6 | 0,80 | 14,9 | 1462 | 854 |
+| 7 | 0,90 | 16,9 | 1658 | 1050 |
+| 8 | 1,05 | 19,6 | 1923 | 1315 |
+| 9 | 1,20 | 22,0 | 2158 | 1550 |
+| 10 | 1,30 | 24,0 | 2354 | 1746 |
 
 **3. ábra – Kalibrációs görbe, $\Delta p(h)$:**
 
